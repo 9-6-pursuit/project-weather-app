@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Weather App</h1>
+        <form class="weather-form">
+            <label>Pick a Location</label>
+            <input type="text" placeholder="Type here...">
+            <button type="submit">Get Weather</button>
+        </form>
+    </header>
+    <main>
+        <div class="main-div">
+            <section class="main-section">
+                <h4 id="default-main-message">Choose a location to view the weather.</h4>
+                <div class="weather-body" hidden>
+                    <h1>Location Name</h1>
+                    <li>
+                        <b>Area: </b>
+                        <span>Area Name</span>
+                    </li>
+                    <li>
+                        <b>Region: </b>
+                        <span>Region Name</span>
+                    </li>
+                    <li>
+                        <b>Country: </b>
+                        <span>Country Name</span>
+                    </li>
+                    <li>
+                        <b>Currently: </b>
+                        <span>Feels like 0°F</span>
+                    </li>
+                </div>
+            </section>
+            
+            <!-- There are 3 spans in the list. [0] - Avg temp, [1] - Max temp, [2] - Min temp -->
+            <!-- document.getElementById('today').querySelectorAll('span') -->
+            <!-- document.getElementById('tomorrow').querySelectorAll('span') -->
+            <!-- document.getElementById('after-tomorrow').querySelectorAll('span') -->
+            <div class="main-section forecast">
+                <section id="today">
+                    <h1>Today</h1>
+                    <li>
+                        <b>Average Temperature: </b>
+                        <span>0°F</span>
+                    </li>
+                    <li>
+                        <b>Max Temperature: </b>
+                        <span>0°F</span>
+                    </li>
+                    <li>
+                        <b>Min Temperature: </b>
+                        <span>0°F</span>
+                    </li>
+                </section>
+
+                <section id="tomorrow">
+                    <h1>Tomorrow</h1>
+                    <li>
+                        <b>Average Temperature: </b>
+                        <span>0°F</span>
+                    </li>
+                    <li>
+                        <b>Max Temperature: </b>
+                        <span>0°F</span>
+                    </li>
+                    <li>
+                        <b>Min Temperature: </b>
+                        <span>0°F</span>
+                    </li>
+                </section>
+
+                <section id="after-tomorrow">
+                    <h1>Day After Tomorrow</h1>
+                    <li>
+                        <b>Average Temperature: </b>
+                        <span>0°F</span>
+                    </li>
+                    <li>
+                        <b>Max Temperature: </b>
+                        <span>0°F</span>
+                    </li>
+                    <li>
+                        <b>Min Temperature: </b>
+                        <span>0°F</span>
+                    </li>
+                </section>
+            </div>
+        </div>
+        <section class="previous-searches">
+            <label>Previous Searches</label>
+            <!-- document.getElementsByClassName('previous-searches')[0].querySelector('ul') -->
+            <h4>No previous searches.</h4>
+        </section>
+    </main>
+</body>
+</html>
