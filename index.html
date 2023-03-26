@@ -4,36 +4,33 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital@0;1&family=Merriweather+Sans:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/styles.css">
   <script src="./assets/script.js" defer></script>
   <title>Weather App</title>
 </head>
 <body>
   <div class="container">
-    <form class="banner-form">
+    <form class="banner-form" type="submit">
       <h1 class="heading">Weather App</h1>
       <label>
-        Pick a Location: <input type="text" id="weather">
+        Pick a Location: <input type="text" id="location">
       </label>
-      <input type="button" name="submit" value="Get Weather">
+      <input id="weather-button" type="button" name="submit" value="Get Weather">
     </form>
     </div>
     <div class="search-results">
-      <div class="city-results">
-        <h2>Some City</h2>
-        <ul class="weather-results">
-          <li class="weather-result">some weather</li>
-          <li class="weather-result">some weather</li>
-          <li class="weather-result">some weather</li>
-        </ul>
+      <div id="city-results">
+        <!-- city name Goes here -->
+        <!-- 
+          area, 
+          region, 
+          country 
+          and current 'feels like goes here -->
       </div>
       <div class="previous-searches">
-        <h4>Previous Searches</h4>
-        <ul class="previous-searches">
-         <li class="previous-search">was 90C</li>
-         <li class="previous-search">was 89C</li>
-         <li class="previous-search">was 88C</li>
-       </ul>
       </div>
     </div>
     <div class="extra-features">
