@@ -10,5 +10,5 @@ receivedPromise
   });
 
 const fillWeatherBox = (json) => {
-  console.table(json);
+  console.log(json);
 };
