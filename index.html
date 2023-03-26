@@ -5,33 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="./script/main.js"></script>
+    <script defer src="./main.js"></script>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./search.js"></script>
 </head>
-<body>
-    <header>
+<body class="display">
+<header id="header">
     <h1>Weather App</h1>
     <form>
-        <label for="location">Pick a Location</label>
-        <input type="text" name="location" placeholder="Enter a city" />
-        <input type="submit" name="weather-button" value="Get Weather" />
+    <label for="location-text">Pick a location</label>
+    <input type="text" id="location-input" name="location" required />
+    <input type="submit" value="Get Weather" name="submit-button" />
     </form>
-    </header>
+</header>
 <br>
 <main>
-    <section class="display">Choose a location to view the weather</section>
+    <!-- Current search section -->
+    <section id="curr_search">Choose a location to view the weather.</section>
+    <!-- Previous search section -->
     <aside class="history">
-        <h3>Previous Searches:</h3>
-        <ul>
-        <li>No previous search</li>  
-        </ul>
-        </div>
-    </aside>   
+    <h3>Previous Searches</h3>
+    <ul id="hist_ul">
+        <p>No previous searches</p>
+    </ul>
+    </aside>
+    <!-- 3-Day forecast section -->
+    <div id="today"></div>
+    <div id="tomorrow"></div>
+    <div id="future"></div>
 </main>
-    <section class="forecast">
-        <div class="current"></div>
-        <div class="tomorrow"></div>
-        <div class="future"></div>
-    </section>
 </body>
 </html>
