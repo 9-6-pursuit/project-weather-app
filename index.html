@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script defer src="index.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="index.js"></script>
 </head>
 <body>
     <div class="page-container">
@@ -14,25 +14,18 @@
             <h1>Weather App</h1>
             <ul class="upper-box-items">
                 <li class="upper-box-item">Pick a Location</li>
-                <input type="text" class=""upper-box-item>
-                <button class="upper-box-item">Get Weather</button>
+                <input type="text" class="upper-box-item" id="city-name-input">
+                <button class="upper-box-item" id="search-button">Get Weather</button>
             </ul>
         </div>
         <div class="lower-box">
-            <div class="lower-box">Choose a location to view the weather.</div>
-            <ul class="previous-search-list">
+            <ul class="weather-box" id="weather-box">Choose a location to view the weather.</ul>
+            <ul class="previous-searches-list">
                 <h3> Previous Searches</h3>
-                <li>No previos searches.</li>
+                <li>No previous searches.</li>
             </ul>
         </div>
     </div>
 </body>
 </html>
 
-<!-- main container:
-upperBox:
-weatherAppBox:
-pickALocation:
-getWeather:
-lowerBox:
-location: -->
