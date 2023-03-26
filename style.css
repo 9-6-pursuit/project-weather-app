@@ -1,0 +1,54 @@
+body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+li {
+    list-style: none;
+}
+.container {
+    width: 65%;
+}
+.first-box {
+    background-color: teal;
+    border: 3px solid rgb(56, 67, 221);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+h1 {
+    padding-left: 30%;
+}
+.first-box-items {
+    display: flex;
+    flex-direction: row;
+    padding-right: 50px;
+    color: aliceblue;
+}
+.first-box-items li {
+    margin-right: 10px;
+}
+button {
+    cursor: pointer;
+    background-color: turquoise;
+    color: aliceblue;
+}
+
+.second-box {
+    border: 3px solid rgb(212, 43, 43);
+    display:grid;
+    grid-template-columns: 70% 30%;
+    margin-top: 20px;
+}
+
+.weather-box {
+    align-items: center;
+    display: flex;  
+    flex-direction: column;
+    justify-content: center;
+    padding: 16px;
+}
+
+.weather-box-item {
+    margin-bottom: 10px;
+}
