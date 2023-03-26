@@ -1,0 +1,63 @@
+body {
+    
+    background-image: linear-gradient( blue, white);
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.conversion form{
+display: flex;
+flex-direction: column;
+}
+
+.page-container{
+  
+  font-family: Arial, Helvetica, sans-serif;
+ padding: 30px;
+}
+
+.upper-box {
+    background-image: linear-gradient( blue, white);
+    border:6px solid #073674;
+    color: #f3fcf0;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 50px;
+    text-align: center;
+  }
+  
+.lower-box{
+    background: #073674;
+    border-top: 10px solid white ;
+    color: #f3fcf0;
+    display:grid;
+    grid-column: row ;
+    font-family: Arial, Helvetica, sans-serif;
+    grid-template-columns: 70% 30%;
+    padding: 40px;
+    text-align: center;
+}
+  header h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 42px;
+    margin-top: 0;
+  }
+  li {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    list-style: none;
+    display: grid;
+
+  }
+
+  .weather-box {
+    align-items: center;
+    background-color: rgb(125, 205, 236);
+    border: 5px solid white;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+   
+  }
