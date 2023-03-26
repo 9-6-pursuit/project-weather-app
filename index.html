@@ -15,7 +15,7 @@
         <form id="weather-input">
           <label
             >Pick a Location
-            <input id="location" name="location" type="text" />
+            <input id="location" name="location" type="text" required />
           </label>
           <button id="location-submit" name="location-submit" type="submit">
             Submit Weather
@@ -24,8 +24,15 @@
       </header>
       <main>
         <aside id="conversion-widget">Temperature Converter</aside>
-        <article id="weather-display">Weather Goes Here</article>
-        <aside id="weather-history">Previous Searches</aside>
+        <article id="weather-display">
+          <h2>Weather</h2>
+          <h3 id="weather-location-headline"></h3>
+          <ul id="weather-display-list"></ul>
+        </article>
+        <aside id="weather-history">
+          Previous Searches
+          <ul id="weather-history-list"></ul>
+        </aside>
       </main>
     </div>
   </body>
