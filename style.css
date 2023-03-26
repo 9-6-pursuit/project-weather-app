@@ -1,0 +1,67 @@
+html,
+body {
+  color: #0f0e0e;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 10px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Rubik", sans-serif;
+  font-weight: normal;
+  margin: 0;
+}
+
+header {
+  background: #3564e4;
+  border: 3px solid darkblue;
+  color: #fbf5f3;
+}
+
+header h1 {
+    display: flex;
+    flex-direction: row;
+    padding: 25px;
+    font-family: "EB Garamond", serif;
+    font-size: 50px;
+    margin-left: 300px;
+}
+
+.centered {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 25px auto;
+  width: 75%;
+}
+
+button {
+  border: 2px solid #c5cec9;
+  border-radius: 5px;
+  background: #e0e8e3;
+  color: #0a0a0a;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px;
+}
+
+button:hover {
+  border: 2px solid #b7bdb9;
+  background: #858987;
+}
+
+
+
+/* .card {
+  border: 3px solid #4f7d5d;
+  padding: 25px;
+}
+
+.hidden {
+  display: none;
+} */
