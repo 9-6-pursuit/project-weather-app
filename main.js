@@ -1,11 +1,9 @@
-// let receivedPromise = fetch(`https://wttr.in/Montreal?format=j1`);
-// let searchText = document.getElementById("location").value; // what the user inputs
-const weatherDisplayList = document.getElementById("weather-display-list");
-const weatherHistoryList = document.getElementById("weather-history-list");
-const weatherHeadline = document.getElementById("weather-location-headline");
-const searchForm = document.querySelector("form");
+const weatherDisplayList = document.getElementById("weather-display-list"); // the current weather info display area
+const weatherHistoryList = document.getElementById("weather-history-list"); // list of previous searches
+const weatherHeadline = document.getElementById("weather-location-headline"); // the current weather region
+const searchForm = document.getElementById("weather-input"); // the search form
 
-searchForm.addEventListener("submit", (event) => {
+searchForm.addEventListener("submit", (event) => { // submitting the weather search form
   event.preventDefault();
 
   let searchText = document.getElementById("location").value; // what the user inputs
@@ -22,14 +20,6 @@ searchForm.addEventListener("submit", (event) => {
     });
 });
 
-// receivedPromise
-//   .then((response) => {
-//     return response.json();
-//   })
-//   .then((json) => {
-//     fillWeatherDisplay(json);
-//   });
-
 const fillWeatherDisplay = (json, searchText) => {
   weatherDisplayList.innerText = "";
   const newListItem = document.createElement("li");
@@ -44,5 +34,3 @@ const fillHistoryDisplay = (searchText) => {
   newListItem.textContent = `${searchText}`;
   weatherHistoryList.append(newListItem);
 };
-
-// const getWeatherLocation = (location) => {};
