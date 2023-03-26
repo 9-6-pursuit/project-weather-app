@@ -1,0 +1,81 @@
+body {
+    align-items: center;
+    padding-top: 2%;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/006/174/573/original/beautiful-blue-sky-background-free-vector.jpg);
+}
+
+li {
+    list-style: none;
+}
+
+.page-container {
+    /* border: 3px solid blue; */
+    width: 80%;
+}
+
+.upper-box {
+    align-items: center;
+    /* border: 3px solid rgb(61, 61, 61); */
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(245, 146, 110, .75);
+    
+}
+
+.title {
+    font-family: 'imapact', fantasy;
+    font-size: 50px;
+}
+
+.upper-box-items {
+    /* border: 3px solid rgb(195, 79, 177); */
+    display: flex;
+    flex-direction: row;
+}
+
+.upper-box-item {
+    margin: 8px;
+}
+
+.mid-box {
+    /* border: 3px solid yellow; */
+    display: grid;
+    grid-template-columns: 70% 30%;
+    padding-top: 1.5%;
+}
+
+.weather-box {
+    align-items: center;
+    /* border: 3px solid rgb(196, 139, 32); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(152, 150, 150, 0.75);
+}
+
+.previous-searches {
+    /* border: 3px solid rgb(196, 139, 32); */
+    background-color: rgb(255, 255, 255, .6);
+}
+
+.lower-box-outer {
+/* border: 3px solid green; */
+display: flex;
+flex-direction: column;
+align-items: center;
+/* background-color: rgb(255, 255, 255, .45); */
+padding-top: 3%; 
+padding-bottom: 3%;
+}
+
+.text-box {
+    padding-left: 3% ;
+}
+
+button {
+    border-radius: 5px;
+    border: 2px solid grey;
+}
