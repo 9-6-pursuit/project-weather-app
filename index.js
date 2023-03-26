@@ -27,6 +27,8 @@ let weatherBody = document.getElementsByClassName('weather-body')[0];
 let defaultMsg = document.getElementById('default-main-message');
 let title = weatherBody.querySelector('h1');
 let bodyList = weatherBody.querySelectorAll('li');
+let weatherGraphic = weatherBody.querySelector('.giphy-embed');
+let weatherLink = document.querySelector('#giphy-link');
 // .forecast
 let forecastSection = document.getElementsByClassName('forecast')[0];
 let forecastList = forecastSection.querySelectorAll('section');
@@ -62,7 +64,32 @@ async function displayWeatherData(location) {
         bodyList[4].innerHTML = `<b>Chance of Sunshine:</b> ${hourlyWeather.chanceofsunshine}%`;
         bodyList[5].innerHTML = `<b>Chance of Rain:</b> ${hourlyWeather.chanceofrain}%`;
         bodyList[6].innerHTML = `<b>Chance of Snow:</b> ${hourlyWeather.chanceofsnow}%`;
-    
+
+        let weatherDesc = hourlyWeather.weatherDesc[0].value;
+
+        if(weatherDesc.includes('fog') 
+        || weatherDesc.includes('mist') 
+        || weatherDesc.includes('cloud')) {
+            weatherGraphic.src = "https://giphy.com/embed/daO222fazggK5NGgKM";
+            weatherLink.href = "https://giphy.com/stickers/happy-kawaii-moodoodles-daO222fazggK5NGgKM";
+        }
+        else if(weatherDesc.includes('storm')) {
+            weatherGraphic.src = "https://giphy.com/embed/uvuZo0g1JbjusMij23";
+            weatherLink.href = "https://giphy.com/stickers/cloud-storm-nuage-uvuZo0g1JbjusMij23";
+        }
+        else if(weatherDesc.includes('rain')) {
+            weatherGraphic.src = "https://giphy.com/embed/qy5bxOA9ikILH3jKYV";
+            weatherLink.href = "https://giphy.com/stickers/rain-cloud-raincloud-qy5bxOA9ikILH3jKYV";
+        }
+        else if(weatherDesc.includes('snow') || weatherDesc.includes('ice')) {
+            weatherGraphic.src = "https://giphy.com/embed/PtgBUWepLWMHqGsApe";
+            weatherLink.href = "https://giphy.com/stickers/snow-snowflake-neige-PtgBUWepLWMHqGsApe";
+        }
+        else {
+            weatherGraphic.src = "https://giphy.com/embed/BCgbjF9Y41UgGEam5O";
+            weatherLink.href = "https://giphy.com/stickers/encontrinhoblogdomath-BCgbjF9Y41UgGEam5O";
+        }
+
         defaultMsg.style.display = 'none';
         weatherBody.style.display = '';
     
@@ -80,11 +107,9 @@ async function displayWeatherData(location) {
         forecastSection.style.display = '';
 
         // Adds this search to the previous searches list
-        let areaValue = nearestArea.areaName[0].value;
-
-        if(!previousStringList.includes(areaValue)) {
-            generatePreviousSearch(areaValue);
+        if(location.trim() && !previousStringList.includes(location)){
             previousDefaultMsg.style.display = 'none';
+            generatePreviousSearch(location);
         }
     } else {
         window.alert('Something went wrong, please try again later...');

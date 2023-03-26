@@ -13,6 +13,7 @@ body {
 h1,h2,h3,h4 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 100;
+    padding: 0px 0px 15px 0px;
 }
 
 header {
@@ -133,6 +134,11 @@ button:hover {
 .weather-body li {
     list-style: none;
     padding: 10px;
+}
+
+a {
+    color:rgb(255, 181, 53);
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.294);
 }
 
 @media only screen and (max-width: 1200px){
