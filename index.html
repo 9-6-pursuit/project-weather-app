@@ -5,22 +5,36 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./assets/styles.css">
-  <script src="./assets/script.js"></script>
+  <script src="./assets/script.js" defer></script>
   <title>Weather App</title>
 </head>
 <body>
   <div class="container">
-    <div class="banner-form">
+    <form class="banner-form">
       <h1 class="heading">Weather App</h1>
       <label>
         Pick a Location: <input type="text" id="weather">
       </label>
       <input type="button" name="submit" value="Get Weather">
-    </div>
+    </form>
     </div>
     <div class="search-results">
-      <div class="city-results"></div>
-        <ul class="previous-searches"></ul>
+      <div class="city-results">
+        <h2>Some City</h2>
+        <ul class="weather-results">
+          <li class="weather-result">some weather</li>
+          <li class="weather-result">some weather</li>
+          <li class="weather-result">some weather</li>
+        </ul>
+      </div>
+      <div class="previous-searches">
+        <h4>Previous Searches</h4>
+        <ul class="previous-searches">
+         <li class="previous-search">was 90C</li>
+         <li class="previous-search">was 89C</li>
+         <li class="previous-search">was 88C</li>
+       </ul>
+      </div>
     </div>
     <div class="extra-features">
       <div class="today"></div>

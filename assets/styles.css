@@ -1,15 +1,16 @@
 body{
+  align-items: center;
+  display: flex;
   font-family: Arial, Helvetica, sans-serif;
+  flex-direction: column;
   text-align: center;
 }
 .container{
   align-items: center;
-  border:3px solid black;
-  background-color: rgb(73, 137, 144);
+  border:3px solid rgb(234, 0, 234);
   display: flex;
   flex-direction: column;
-  width: 90%;
-  
+  width: 80%;
 }
 .banner-form{
   background-color: rgb(73, 137, 144);
@@ -17,5 +18,23 @@ body{
   color: white;
   margin: 10 auto 40 10;
   padding: 10 auto 40 10;
-  width: 90%;
+  width: 80%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.search-results{
+  border:3px solid rgb(0, 0, 234);
+  display: grid;
+  grid-template-columns: 70% 30%;
+  width: 60%;
+}
+.city-results{
+  border: 3px solid orange;
+}
+input{
+  margin-bottom: 20px;
+}
+ul {
+  list-style: none;
 }
