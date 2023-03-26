@@ -21,7 +21,7 @@
         <div class="main-div">
             <section class="main-section">
                 <h4 id="default-main-message">Choose a location to view the weather.</h4>
-                <div class="weather-body" hidden>
+                <div class="weather-body" style="display:none">
                     <h1>Location Name</h1>
                     <li>
                         <b>Area: </b>
@@ -39,15 +39,23 @@
                         <b>Currently: </b>
                         <span>Feels like 0°F</span>
                     </li>
+                    <li>
+                        <b>Chance of Sunshine: </b>
+                        <span>0%</span>
+                    </li>
+                    <li>
+                        <b>Chance of Rain: </b>
+                        <span>0%</span>
+                    </li>
+                    <li>
+                        <b>Chance of Snow: </b>
+                        <span>0%</span>
+                    </li>
                 </div>
             </section>
             
-            <!-- There are 3 spans in the list. [0] - Avg temp, [1] - Max temp, [2] - Min temp -->
-            <!-- document.getElementById('today').querySelectorAll('span') -->
-            <!-- document.getElementById('tomorrow').querySelectorAll('span') -->
-            <!-- document.getElementById('after-tomorrow').querySelectorAll('span') -->
-            <div class="main-section forecast">
-                <section id="today">
+            <div class="main-section forecast" style="display:none">
+                <section>
                     <h1>Today</h1>
                     <li>
                         <b>Average Temperature: </b>
@@ -63,7 +71,7 @@
                     </li>
                 </section>
 
-                <section id="tomorrow">
+                <section>
                     <h1>Tomorrow</h1>
                     <li>
                         <b>Average Temperature: </b>
@@ -79,8 +87,8 @@
                     </li>
                 </section>
 
-                <section id="after-tomorrow">
-                    <h1>Day After Tomorrow</h1>
+                <section>
+                    <h1>After Tomorrow</h1>
                     <li>
                         <b>Average Temperature: </b>
                         <span>0°F</span>
@@ -99,7 +107,9 @@
         <section class="previous-searches">
             <label>Previous Searches</label>
             <!-- document.getElementsByClassName('previous-searches')[0].querySelector('ul') -->
-            <h4>No previous searches.</h4>
+            <ul>
+                <h4>No previous searches.</h4>
+            </ul>
         </section>
     </main>
 </body>
