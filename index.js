@@ -1,3 +1,5 @@
+/* checked */
+
 const weatherBox = document.getElementById("weather-box")
 const cityNameInput = document.getElementById("city-name-input")
 const searchButton = document.getElementById("search-button")
