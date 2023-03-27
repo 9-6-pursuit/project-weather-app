@@ -3,6 +3,8 @@ const cityNameInput = document.getElementById("city-name-input")
 const searchButton = document.getElementById("search-button")
 const mainBody = document.getElementById("daBody")
 const previousBox = document.getElementById("previous-search-list")
+// const removeP = document.queryElementById("trying-to-remove-this")
+
 
 const todayBox = document.getElementById("todayBox")
 const tomorrowBox = document.getElementById("tomorrowBox")
@@ -52,8 +54,13 @@ const fillWeatherBox = (json, cityName) => {
    temperature.innerHTML = `<strong>Currently</strong> Feels like ${temperatureValue}°F`
    weatherBox.append(temperature)   
 
-    // let removeP = document.querySelector("p")
-    // removeP.remove()
+     let sunshine = json.weather[0].hourly[0].chanceofsunshine
+     console.log(sunshine)
+
+
+    let removeP = document.querySelector("p")
+    removeP.remove()
+    // removeP.innerHTML = ""
     let newInfo = document.createElement("li")
     newInfo.innerHTML = `${cityName} - ${temperatureValue}°F`
     previousBox.append(newInfo)
