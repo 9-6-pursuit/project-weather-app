@@ -1,6 +1,8 @@
 body{
     display: flex;
     flex-direction: column;
+    justify-items: center;
+    align-items: center;
 }
 
 main{
@@ -10,9 +12,14 @@ main{
     align-items: center;
 }
 
-ul{
+.search-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     list-style-type: none;
+    border-bottom: 10px;
 }
+
 
 .search-box {
     height: 150px;
@@ -20,8 +27,9 @@ ul{
     display: flex;
     flex-direction: column;
     align-items: center; 
+    justify-content: center;
     background-color: khaki;
-    margin: 5px;
+    
 }
 
 .search-input li, button{
@@ -35,6 +43,7 @@ ul{
 }
 
 .output-box{
+    margin: 5px;
     display: grid;
     height: 90px;
     width: 800px;
@@ -43,35 +52,44 @@ ul{
 }
 
 .current-search{
+    margin: 5px;
     background-color: antiquewhite;
     display: flex;
     flex-direction: column;
     align-self: center;
     align-items: center;
-    
-    
 }
 
 
-.previous-search{
-}
-
-h3{
-    padding-left: 5px;
+h4{
+    padding-left: 15px;
 
 }
 
+.weather-info-list{
+    padding-bottom: 15px;
+}
 
+  
+.next-days{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    justify-content: space-evenly;
+    width: 800px;
+    margin: 5px;
 
-
+  }
+  
 .search-box{
     border: 3px solid red;
 }
-
-.search-input{
+.output-box{
     border: 3px solid green;
 }
-
-.output-box{
+.previous-search{
     border: 3px solid blue;
+}
+.next-days{
+    border: 3px solid yellow;
 }
