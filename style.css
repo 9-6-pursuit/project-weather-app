@@ -1,0 +1,44 @@
+body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+.page-container {
+    border: 3px solid green;
+    width: 65%;
+}
+
+.upper-box {
+    align-items: center;
+    border: 3px solid red;
+    display: flex;
+    flex-direction: column;
+}
+
+.upper-box-items {
+    border: 3px solid rgb(rgb(120, 15, 15), rgb(17, 90, 17), rgb(17, 17, 27));
+}
+
+.lower-box {
+    border: 3px solid yellow;
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+
+.weather-box {
+    align-items: center;
+    border: 3px solid fuchsia;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.previous-searches-list {
+    border: 3px solid darkcyan;
+}
