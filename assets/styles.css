@@ -2,7 +2,7 @@ body{
   align-items: center;
   display: flex;
   font-family: 'Atkinson Hyperlegible', sans-serif;
-  font-family: 'Merriweather Sans', sans-serif;
+  /* font-family: 'Merriweather Sans', sans-serif; */
   flex-direction: column;
   text-align: center;
 }
@@ -11,7 +11,7 @@ body{
   border:3px solid rgb(234, 0, 234);
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 90%;
 }
 .banner-form{
   background-color: rgb(73, 137, 144);
@@ -22,22 +22,76 @@ body{
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 10 auto 40 10;
-  width: 80%;
+  width: 90%;
   
 }
 
 .search-results{
   border:3px solid rgb(0, 0, 234);
   display: grid;
-  grid-template-columns: 70% 30%;
-  width: 60%;
+  grid-template-columns: 60% 30%;
+  width: 90%;
 }
 #city-results{
-  border: 3px solid orange;
+  border: 3px solid rgb(11, 230, 121);
+  background-color: lightgray;
+  border-radius: 8px;
+  line-height: 30px;
+  margin: 5%;
+  margin-left: 50px;
+  padding:5%;
+}
+
+.hide{
+  display: none;
+}
+
+#previous-searches{
+  align-items: left;
+  display:flex;
+  flex-direction: column;
+  line-height: 18px;
+  padding-top: 15px;
+}
+.extra-features{
+  border: 1px solid rgb(45, 39, 39);
+  /* background-color:rgb(45, 39, 39); */
+  color:rgb(10, 7, 3);
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  width: 80%;
 }
 input{
   margin-bottom: 20px;
 }
 ul {
   list-style: none;
+}
+.smallFont{
+  font-size: smaller;
+}
+
+.left-justify{
+  border: 3px solid green;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+.today{
+  border: 1px solid black; 
+  border-radius: 8px;
+  display:flex;
+  flex-direction: column;
+}
+.tomorrow{
+  border: 1px solid black; 
+  border-radius: 8px;
+  display:flex;
+  flex-direction: column;
+}
+.day-after-tomorrow{
+  border: 1px solid black; 
+  border-radius: 8px;
+  display:flex;
+  flex-direction: column;
 }
