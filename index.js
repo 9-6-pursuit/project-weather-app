@@ -7,14 +7,11 @@ const searchButton = document.getElementById("search-button")
 searchButton.addEventListener("click", event => {
     let cityName = cityNameInput.value
     cityNameInput.value = ""
+    console.log(cityName)
 
-    let receivedPromise = fetch(`https://wttr.in/${cityName}format=j1`)
-//console.log(receivedPromise)
-
-    receivedPromise.then(response => {
-    //console.log("Response;")
-        return response.json()
-    }).then(json => {
+    fetch(`https://wttr.in/${cityName}?format=j1`)
+    .then(response => response.json())
+    .then(json => {
         fillWeatherBox(json, cityName)
     })
 })
@@ -32,13 +29,13 @@ const fillWeatherBox = (json, cityName) => {
     area.innerHTML = `<strong>Area:</strong> ${areaName}`
     weatherBox.append(area)
 
-    let regionName = json.nearest_area[0].regionName[0].value
+    let regionName = json.nearest_area[0].region[0].value
     let region = document.createElement("li")
     region.className = `weather-box-item`
     region.innerHTML = `<strong>Region:</strong> ${regionName}`
     weatherBox.append(region)
 
-    let countryName = json.nearest_area[0].countryName[0].value
+    let countryName = json.nearest_area[0].country[0].value
     let country = document.createElement("li")
     country.className = `weather-box-item`
     country.innerHTML = `<strong>Country:</strong> ${countryName}`
@@ -50,5 +47,7 @@ const fillWeatherBox = (json, cityName) => {
     temperature.innerHTML = `<strong>Currently:</strong> Feels like ${temperatureValue}°F`
     weatherBox.append(temperature)
 }
+
+
 
 //let area = 
