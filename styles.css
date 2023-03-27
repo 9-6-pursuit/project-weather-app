@@ -2,9 +2,12 @@ body {
 padding-left: 15%;
 padding-right: 15%;
 font-family: sans-serif;
+background-size: cover;
+background-repeat: no-repeat;
 }
 
 main {
+    /* border: 3px solid red; */
 display: grid;
 margin: 0 auto;
 text-align: center;
@@ -27,3 +30,27 @@ background: lightgrey;
 padding: 30px;
 grid-column: 1 / span 3;
 }
+
+.sunny {
+    background-image: url("https://media.istockphoto.com/id/1007768414/photo/blue-sky-with-bright-sun-and-clouds.jpg?s=612x612&w=0&k=20&c=MGd2-v42lNF7Ie6TtsYoKnohdCfOPFSPQt5XOz4uOy4=");
+};
+
+.rainy {
+    background-image: url("https://media.istockphoto.com/id/1257951336/photo/transparent-umbrella-under-rain-against-water-drops-splash-background-rainy-weather-concept.jpg?s=612x612&w=0&k=20&c=lNvbIw1wReb-owe7_rMgW8lZz1zElqs5BOY1AZhyRXs=")
+};
+
+.overcast {
+
+};
+
+.partly_cloudy {
+
+};
+
+.cloudy {
+
+};
+
+.clear{
+    
+};
