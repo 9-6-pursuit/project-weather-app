@@ -39,7 +39,8 @@ document.querySelector("form").addEventListener("submit", (event) => {
 
       pre = weather.nearest_area[0].areaName[0].value
       feels = weather.current_condition[0].FeelsLikeF
-      select.append(`${weather.nearest_area[0].areaName[0].value} - ${weather.current_condition[0].FeelsLikeF}°F `)
+      del.append(`${weather.nearest_area[0].areaName[0].value} - ${weather.current_condition[0].FeelsLikeF}°F `)
+      select.remove()
     
       
 
@@ -108,6 +109,10 @@ document.querySelector("form").addEventListener("submit", (event) => {
       const minTemp2 = weather.weather[2].mintempF;
       paragraphday.append(strong09, minTemp2);
       day.append(h3day, paragraphday);
+
+      const destroy = furture => {
+        document.getElementById(furture).innerHTML = '';
+      };
       
     });
 });
