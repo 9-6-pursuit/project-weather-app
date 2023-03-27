@@ -11,29 +11,46 @@
 </head>
 <body>
     <main>
-        <section class="search-box">
+        <header class="search-box">
             <h1>Weather App</h1>
-            <ul class="search-input">
-                <li>Pick a Location</li>
-                <li><input type="text" name="" id=""></li>
-                <button>Get Weather</button>
-            </ul>
-        </section>
+            <form class="search-input">
+                <label for="city-input">Pick a Location:</label>
+                <input type="text" id="city-input" name="city-input" placeholder="City Name">
+                <button class="button" id="search-button">Get Weather</button>
+            </form>
+        </header>
 
         <section class="output-box">
-            <div class="current-search">
+            <div class="current-search" id="weather-data">
                 <ul>
                     <li>Choose a location to view the weather</li>
                 </ul>
             </div>
             <div class="previous-search">
+                <h4>Previous Searches</h4>
                 <ul>
-                    <h3>Previous Searches</h3>
                     <li>No previous searches</li>
                 </ul>
             </div>
+            <aside>
+
+            </aside>
         </section>
 
+        <section class="next-days">
+            <div>
+                <h5 class="today">Today</h5>
+
+            </div>
+            <div>
+                <h5 class="tomorrow">Tomorrow</h5>
+
+            </div>
+            <div>
+                <h5 class="day-after">Day After Tomorrow</h5>
+
+            </div>
+        </section>
     </main>   
 </body>
 </html>
