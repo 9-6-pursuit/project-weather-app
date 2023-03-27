@@ -20,6 +20,8 @@ searchButton.addEventListener("click", event => {
             return response.json()
         }).then(json => {
             fillWeatherBox(json, entered) 
+        }).catch(e => {
+            console.error(e);
         })
     }else {
         errorMsg = document.createElement("h2")
@@ -34,7 +36,7 @@ searchButton.addEventListener("click", event => {
 
 const fillWeatherBox = (json, entered) => {
     weatherBox.innerHTML = ""
-    //window.montreal = json
+    window.montreal = json
 
     let newHead = document.createElement("h3")
     newHead.textContent = entered
@@ -64,6 +66,11 @@ const fillWeatherBox = (json, entered) => {
     curr.innerHTML =`<strong>Currently:</strong> ${currently}°F`
     weatherBox.append(curr)
    // console.log(json);
+
+//    let icon = json.current_condition[0].weatherDesc[0]
+//    let image = document.createElement("img")
+//    image.src="icon8-summer.gif"
+//    weatherBox.append(image)
 
    let addOn = document.getElementById("weather-box-addon")
     //console.log(addOn)
