@@ -2,22 +2,11 @@ const weatherBox = document.getElementById("weather-box")
 const cityNameInput = document.getElementById("city-name-input")
 const searchButton = document.getElementById("search-button")
 const mainBody = document.getElementById("daBody")
+const previousBox = document.getElementById("previous-search-list")
 
 const todayBox = document.getElementById("todayBox")
 const tomorrowBox = document.getElementById("tomorrowBox")
 const afterTomorrowBox = document.getElementById("afterTomorrowBox")
-
-// const div1 = document.createElement("divOne")
-// div1.className = "wats-in-the-box"
-// mainBody.append(div1)
-
-// const div2 = document.createElement("divTwo")
-// div2.className = "wats-in-the-box"
-// mainBody.append(div2)
-
-// const div3 = document.createElement("divThree")
-// div3.className = "wats-in-the-box"
-// mainBody.append(div3)
 
 searchButton.addEventListener("click", event => {
     let cityName = cityNameInput.value
@@ -63,11 +52,14 @@ const fillWeatherBox = (json, cityName) => {
    temperature.innerHTML = `<strong>Currently</strong> Feels like ${temperatureValue}°F`
    weatherBox.append(temperature)   
 
+    // let removeP = document.querySelector("p")
+    // removeP.remove()
+    let newInfo = document.createElement("li")
+    newInfo.innerHTML = `${cityName} - ${temperatureValue}°F`
+    previousBox.append(newInfo)
 
 
-
-
-
+    todayBox.innerHTML = ""
 
     let today = document.createElement("h3") //Today starts here
     today.innerHTML = `<strong>Today</strong>`
@@ -94,6 +86,8 @@ const fillWeatherBox = (json, cityName) => {
    todayBox.append(todayMinTemp)
     console.log(todayMinTempValue) //Today ends here
 
+    tomorrowBox.innerHTML = ""
+
     let tomorrow = document.createElement("h3") //Tomorrow starts here
     tomorrow.innerHTML = `<strong>Tomorrow</strong>`
     tomorrowBox.append(tomorrow)
@@ -118,6 +112,8 @@ const fillWeatherBox = (json, cityName) => {
    tomorrowMinTemp.innerHTML = `<strong>Min Temperature:</strong> ${tomorrowMinTempValue}°F`
    tomorrowBox.append(tomorrowMinTemp)
     console.log(tomorrowMinTempValue) //Tomorrow Ends here
+
+    afterTomorrowBox.innerHTML = ""
 
     let afterTomorrow = document.createElement("h3") //Day After Tomorrow starts here
     afterTomorrow.innerHTML = `<strong>Day After Tomorrow</strong>`

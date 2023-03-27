@@ -5,9 +5,15 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-li{
+li.threeDays {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.weather-box li {
     list-style: none;
 }
+
 
 .page-container{
     border: 1px solid black;
@@ -22,12 +28,14 @@ li{
     border: 1px solid black;
     display: flex;
     flex-direction: column;
+    ;
     
 }
 
 .upper-box-items{
     display: flex;
     flex-direction: row;
+    list-style: none
 }
 
 .upper-box-item{
@@ -42,12 +50,12 @@ li{
 }
 
 .weather-box{
-    align-items: center;
+    text-align: center;
     border: 2px solid rgb(98, 225, 200);
     display: grid;
-    /* flex-direction: column; */
     justify-content: center;
     background-color: lightgray;
+    padding: 20px;
 
 }
 
@@ -57,12 +65,9 @@ li{
 }
 
 .threeDaysForecast{
-    /* border: 5px solid black; */
     display: grid;
-    /* flex-direction:initial; */
-    grid-template-columns: 400px 400px 400px;
+    grid-template-columns: 1fr 1fr 1fr;
     width: 80%;
     text-align: center;
     justify-content: center;
-
 }
