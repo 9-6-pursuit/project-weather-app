@@ -37,7 +37,7 @@ document.querySelector("form").addEventListener("submit", (event) => {
                 const li = document.createElement("li");
                 li.innerHTML = `<a href="#">${location}</a> - ${today}°F`;
 
-                // Add a click event listener to the new list item
+                // Add a click event listener to the new list items
                 li.addEventListener("click", (event) => {
                     event.preventDefault();
                     // Call the search function with the weather object
