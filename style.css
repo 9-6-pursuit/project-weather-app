@@ -31,7 +31,7 @@ li {
 .upper-box {
     align-items: center;
     background-color: rgb(57, 192, 192);
-    border: 3px black;
+
     color: white;
     display: flex;
     flex-direction: column;
@@ -50,14 +50,17 @@ li {
 }
 
 .lower-box {
-    border: 3px black;
-    background-color: gainsboro;
+
     display: grid;
     grid-template-columns: 70% 30%;
 }
 
+.lower-box
+
 .weather-box {
     align-items: center;
+    background-color: rgb(170, 190, 245);
+    background-color: gainsboro;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -66,4 +69,6 @@ li {
 
 .weather-box-item {
     margin-bottom: 10px;
-}
+} 
+
+
