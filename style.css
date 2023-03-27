@@ -7,4 +7,14 @@ header {
     width:900px;
     background-color:rgba(3, 143, 143, 0.891) ;
     }
-    
+
+div {
+    text-align: center;
+    color:black;
+    border: 3px solid teal;
+    padding: 30px;
+    margin: auto;
+    height: fit-content;
+    width:900px;
+    background-color: silver;
+}
