@@ -1,4 +1,14 @@
 const search = (weatherObj) => {
+const weather = weatherObj.current_condition[0].weatherDesc[0].value.toLowerCase();
+
+const body = document.querySelector('body');
+    if (weather.includes('Sunny')) {
+        body.classList.add('Sunny');
+        body.classList.remove('rainy');
+    } else if (weather.includes('rain')) {
+        body.classList.add('rainy');
+        body.classList.remove('Sunny');
+    }
 //Declare variables for current search section
 const area = weatherObj.nearest_area[0].areaName[0].value;
 const region = weatherObj.nearest_area[0].region[0].value;
