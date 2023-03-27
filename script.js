@@ -1,7 +1,10 @@
+
+let form = document.querySelector(".search-input")
 const weatherBox = document.querySelector("#weather-data")
 let cityNameInput = document.getElementById("city-input")
-let button = document.getElementById("search-button")
-button.addEventListener("click", event => {
+
+form.addEventListener("submit", event => {
+    event.preventDefault()
     let cityName = cityNameInput.value
     cityNameInput.value = ""
 
@@ -63,13 +66,25 @@ const fillPreviousSearchBox = (areaName, temperatureValue) => {
     previousSearchArr.unshift({areaName, temperatureValue})
     let previousSearch = document.querySelector(".previous-search li")
     previousSearch.innerHTML = ""
+    if (previousSearchArr.length > 5) {
+        previousSearchArr.pop();
+      }
     previousSearchArr.forEach(search => {
         let list = document.createElement("li")
-        list.innerHTML = `<li>${search.areaName}: ${search.temperatureValue}°F</li>`
+        list.style.color = "blue"
+        list.style.textDecoration = "underline"
+        // list.style.textDecoration("underline")
+        list.innerHTML = `<li>${search.areaName} - ${search.temperatureValue}°F</li>`
+        // add event listener to make the precious search clickable
+        list.addEventListener("click", (event) => {
+            fillWeatherBox(json, event)
+            
+        })
+        
         previousSearch.appendChild(list)
+
 
     });
     
-
 
 }
