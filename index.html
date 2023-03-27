@@ -14,15 +14,22 @@
             <h1>Weather App</h1>
             <ul class="upper-box-items">
                 <li class="upper-box-item">Pick a Location</li>
-                <input class="upper-box-item" id="city-input" type="text">
+                <input class="upper-box-item" id="city-input" type="text" required>
                 <button class="upper-box-item">Get Weather</button>
             </ul>
         </div>
         <div class="lower-box">
-            <ul class="weather-box">Choose a location to view the weather.</ul>
+            <ul class="weather-box">
+                <p id="empty">Choose a location to view the weather.</p>
+                <div class="bottom">
+                    <ul class="day0"></ul>
+                    <ul class="day1"></ul>
+                    <ul class="day2"></ul>
+                </div>
+            </ul>
             <ul class="search-list">
                 <h3>Previous Searches:</h3>
-                <li class="sublist">No previous searches</li>
+                <p class="sublist nolist">No previous searches.</p>
             </ul>
         </div>
     </div>
