@@ -1,0 +1,106 @@
+body {
+    
+    background-image: url(https://jooinn.com/images/clouds-185.jpg);
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.conversion-form{
+display: grid;
+grid-column-start: 1;
+}
+
+.future-weather {
+  align-items: center;
+  border: 5px solid #073674 ;
+  display: grid;
+  grid-template-columns: repeat(3, 300px) ;
+  grid-template-rows: repeat(3, 100px);
+  gap: 40px;
+  justify-content: center;
+  color: white;
+}
+
+header h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 42px;
+  margin-top: 0;
+}
+
+li {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  list-style: none;
+  display: grid;
+
+}
+
+.lower-box{
+  background: #073674;
+  border-top: 10px solid white ;
+  color: #f3fcf0;
+  display:grid;
+ font-family: Arial, Helvetica, sans-serif;
+  grid-template-columns:repeat(3);
+  grid-auto-rows: minmax(150px, auto);
+  grid-gap:5px;
+  padding: 30px;
+  text-align: center;
+}
+
+.page-container{
+  font-family: Arial, Helvetica, sans-serif;
+ padding: 40px;
+}
+
+.previous-search{
+  display: grid;
+  grid-column-start: 3;
+}
+
+.today{
+ align-self: center;
+  line-height: 20px;
+}
+
+.tomorrow{
+  align-self: center;
+  line-height: 20px;
+ 
+}
+
+.upper-box {
+    background-image: linear-gradient(blue,lightyellow);
+    border:6px solid #073674;
+    color: #f3fcf0;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 70px;
+    text-align: center;
+  }
+  
+
+  .weather-box {
+    align-items: center;
+    background-color: rgb(125, 205, 236);
+    border: 5px solid white;
+    display: grid;
+    grid-column-start: 2 / 3 ;
+    font-family: Arial, Helvetica, sans-serif;
+    gap: 10px;
+    padding: 30px;
+    justify-content: center;
+   
+  }
+
+  .weather-box-item {
+   align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+   
+  }
+
+  

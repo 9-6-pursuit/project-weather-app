@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="test.js"></script>
+</head>
+<body>
+    <div class="page-container">
+        <div class="upper-box">
+            <header class="upper-box-items">
+            <h1>Weather App</h1>
+            <ul class="upper-box-items">
+                <form>
+                <label for="location"> Pick a location</label>
+                <input id="input" type="text">
+                <button type="submit">Get Weather </button>
+            </form>
+            </ul>
+        </header>
+        </div>
+        
+    <main>
+        <article class="lower-box">
+            <aside class="conversion">
+                <form id="conversionForm">
+                    <strong><label for="temp-convert">Convert the Temperature:</label></strong>
+                    <br>
+                    <br>
+                        <input type="number" name="convert" id="temp-convert" />
+                        <br>
+                        <br>
+                        <input type="radio" name="conv" value="C" id="to-c" />
+                        <label> °Celsius</label>
+                    <br>
+                        <input type="radio" name="conv" value="F" id="to-f" />
+                        <label>°Fahrenheit</label>
+                    <br>
+                    <br>
+                        <input type="submit" value="submit" />
+                        <h4 id="result"></h4>
+                    </form>
+            </aside>
+           <div class="weather-box"> Choose a location to view the weather</div>
+              <aside class="previous-search">
+                <section>
+                 <h4>Previous Searches</h4>
+                 <br>
+                 <p> No previous searches</p>
+                </section>
+                 </aside>
+            </div>
+        </article>
+
+    </main>
+    <aside class="future-weather">
+        <article class="today"><strong><h3>Today</h3></strong></article>
+        <article class="tomorrow"><strong><h3>Tomorrow</h3></strong></article>
+        <article class="after"><strong><h3>Day After Tomorrow</h3></strong><article>
+       </aside>
+</body>
+</html>
