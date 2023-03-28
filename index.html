@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <script defer src="main.js"></script>
     <title>Weather App</title>
+    <link rel="icon" type="images/x-icon" href="assets/favicon.ico" />
 </head>
 <body>
     <div class="container">
@@ -15,19 +16,20 @@
                 <h1>Weather App</h1>
                 <ul class="first-box-items">
                     <li>Pick a location</li>
-                    <input type="text" />
-                  <button type="submit">Get Weather</button>
+                    <input type="text" id="entered-Input" />
+                  <button id="search-Button">Get Weather</button>
                 </ul>
         
             </header>
         </div>
         <div class="second-box">
-            <div class="weather-box"> choose a location to view the weather.</div>
+            <div class="weather-box" id="weather-box"> choose a location to view the weather.</div>
             <ul>
-                <h3>Previous Searches</h3>
-                <li>No previous searches.</li> 
+                <li id="weather-box-item"> <strong>Previous Searches</strong> </li>
+                <li id="weather-box-addon" >No previous searches.</li> 
             </ul>
         </div>
+        <button id="last-Button">F°/C°</button>
     </div>
 </body>
 </html>
