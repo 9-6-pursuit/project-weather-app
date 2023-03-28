@@ -77,14 +77,31 @@ const fillPreviousSearchBox = (areaName, temperatureValue) => {
         list.innerHTML = `<li>${search.areaName} - ${search.temperatureValue}°F</li>`
         // add event listener to make the precious search clickable
         list.addEventListener("click", (event) => {
-            fillWeatherBox(json, event)
+            console.log(event)
             
         })
+        console.log(previousSearchArr)
         
         previousSearch.appendChild(list)
-
-
     });
-    
 
 }
+
+//Accept temp value and convert it from celsius to fahrenheit or fahrenheit to celsius
+
+const conversionForm = document.querySelector(".conversion-form")
+const conversionTemp = document.querySelector(".result")
+conversionForm.addEventListener("submit", event =>{
+    event.preventDefault()
+    let tempValue = document.querySelector("#temperature").value
+    let isCelsius = document.querySelector("#to-c").checked
+    let isFahrenheit = document.querySelector("#to-f").checked
+    console.log(isCelsius, isFahrenheit, Number(tempValue))
+    console.log(conversionTemp.textContent)
+    if (isCelsius){
+        conversionTemp.textContent = `${(((tempValue - 32) * 5) / 9).toFixed(2)}°C`
+    } else if (isFahrenheit) {
+        conversionTemp.textContent = `${(((9/5) * tempValue) + 32).toFixed(2)}°F`    
+    }
+
+})
