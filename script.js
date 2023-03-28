@@ -3,25 +3,33 @@ let form = document.querySelector(".search-input")
 const weatherBox = document.querySelector("#weather-data")
 let cityNameInput = document.getElementById("city-input")
 
-form.addEventListener("submit", event => {
-    event.preventDefault()
-    let cityName = cityNameInput.value
-    cityNameInput.value = ""
-
-
-    // fetch(`https://wttr.in/${cityName}?format=j1`)
-    //     .then(response => response.json())
-    //     .then(json => fillWeatherBox(json, cityName))
-    //     .catch(error => console.error(error))
-
+function fetchWeatherData(cityName) {
     let receivedPromise = fetch(`https://wttr.in/${cityName}?format=j1`)
     receivedPromise.then(response => {
         return response.json()
     }).then(json => {
         fillWeatherBox(json, cityName)
     }).catch(error => console.error(error))
+
+     // fetch(`https://wttr.in/${cityName}?format=j1`)
+    //     .then(response => response.json())
+    //     .then(json => fillWeatherBox(json, cityName))
+    //     .catch(error => console.error(error))
+
+}
+
+
+
+form.addEventListener("submit", event => {
+    event.preventDefault()
+    let cityName = cityNameInput.value
+    cityNameInput.value = ""
+
+   
+    fetchWeatherData(cityName)
 })
 
+// This section is to create the required elements for the output section
 const fillWeatherBox = (json, cityName) => {
     weatherBox.innerHTML = ""
 
@@ -74,15 +82,21 @@ const fillPreviousSearchBox = (areaName, temperatureValue) => {
         list.style.color = "blue"
         list.style.textDecoration = "underline"
         // list.style.textDecoration("underline")
-        list.innerHTML = `<li>${search.areaName} - ${search.temperatureValue}°F</li>`
-        // add event listener to make the precious search clickable
+        list.innerHTML = `<li>${search.areaName}- ${search.temperatureValue}°F</li>`
+        
+        // add event listener to make the previous search clickable and pass the clicked city 
         list.addEventListener("click", (event) => {
-            console.log(event)
+            const liElement = list.querySelector("li")
+            const searchedArea = liElement.textContent.split('-')[0]
+            console.log(searchedArea)
+
+            //calling fetch weather function when city name on previous search box clicked
+            fetchWeatherData(searchedArea)
             
         })
-        console.log(previousSearchArr)
-        
+        // console.log(previousSearchArr)
         previousSearch.appendChild(list)
+
     });
 
 }

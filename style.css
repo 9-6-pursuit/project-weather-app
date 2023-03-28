@@ -77,14 +77,17 @@ main{
     align-items: center;
 }
 
-.previous-search{
-    margin: 3px;
+.previous-search li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
 }
 
 
 h4{
-    padding-left: 15px;
+    padding-left: 20px;
 
 }
 
@@ -99,8 +102,17 @@ h4{
     border: 1px solid black;
     justify-content: space-evenly;
     width: 800px;
-    margin: 5px;
+}
 
+.today, .tomorrow, .day-after {
+    margin: 1px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    width: 250px;
+    align-items: center;
+    justify-content: start;
 }
   
 .search-box{
@@ -124,6 +136,6 @@ h4{
 .previous-search{
     border: 3px solid blue;
 }
-.next-days{
+/* .next-days{
     border: 3px solid yellow;
-}
+} */
