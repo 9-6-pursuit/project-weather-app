@@ -3,6 +3,7 @@ let form = document.querySelector(".search-input")
 const weatherBox = document.querySelector("#weather-data")
 let cityNameInput = document.getElementById("city-input")
 
+// This function is for Getting the data after receiving the city name as an argument 
 function fetchWeatherData(cityName) {
     let receivedPromise = fetch(`https://wttr.in/${cityName}?format=j1`)
     receivedPromise.then(response => {
@@ -19,19 +20,21 @@ function fetchWeatherData(cityName) {
 }
 
 
-
+// This is to accept the city entered after clicking submit
 form.addEventListener("submit", event => {
     event.preventDefault()
     let cityName = cityNameInput.value
     cityNameInput.value = ""
-
-   
     fetchWeatherData(cityName)
 })
 
 // This section is to create the required elements for the output section
 const fillWeatherBox = (json, cityName) => {
     weatherBox.innerHTML = ""
+
+    // Geting the weather description to use it for icons
+    const weatherDesc = json.current_condition[0].weatherDesc[0].value
+    fillImage(weatherDesc)
 
     let label = document.createElement("h3")
     label.textContent = cityName
@@ -61,8 +64,15 @@ const fillWeatherBox = (json, cityName) => {
     temperature.innerHTML = `<strong>Currently:</strong> Feels like ${temperatureValue}°F`
     weatherBox.append(temperature)
 
-    fillPreviousSearchBox(areaName, temperatureValue)
+    
+    
+    
 
+
+    
+    
+    
+    fillPreviousSearchBox(areaName, temperatureValue)
 }
 
 // This array to store previous search data
@@ -119,3 +129,41 @@ conversionForm.addEventListener("submit", event =>{
     }
 
 })
+
+function fillTodayBox(){
+    const todayBox = document.querySelector(".today")
+    let list = document.createElement("li")
+    list.innerHTML = "Average Temperature"
+    
+    todayBox.append(list)
+}
+
+
+fillTodayBox()
+
+
+// This function is to append the proper icon to weather box
+function fillImage(weatherDesc){
+    let image = document.createElement("img")
+    if(weatherDesc.toLowerCase().includes("sunny")){
+        image.src = "assets/icons8-summer.gif" 
+    } else if(weatherDesc.toLowerCase().includes("rain")){
+        image.src = "assets/icons8-torrential-rain.gif" 
+
+    } else if (weatherDesc.toLowerCase().includes("cloudy")){
+        image.src = "assets/icons8-rain-cloud.gif" 
+
+    } else if (weatherDesc.toLowerCase().includes("wind")) {
+        image.src = "assets/icons8-wind.gif" 
+
+    } else if (weatherDesc.toLowerCase().includes("snow")) {
+        image.src = "assets/icons8-light-snow.gif" 
+
+    } else if (weatherDesc.toLowerCase().includes("storm")) {
+        image.src = "assets/icons8-storm.gif" 
+
+    } else {
+        image.src = "assets/icons8-summer.gif" 
+    }
+    weatherBox.append(image)
+}
