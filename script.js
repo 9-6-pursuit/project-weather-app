@@ -36,7 +36,7 @@ function displayWeather(result) {
     h4.textContent =  `${"Area: "} ${result.nearest_area[0].areaName[0].value}`
     secondH4.textContent = `${"Region: "} ${result.nearest_area[0].region[0].value}`
     thirdH4.textContent = `${"Country: "} ${result.nearest_area[0].country[0].value}`
-    fourthH4.textContent = `${"Currently: "} ${"Feels Like"}      ${result.current_condition[0].FeelsLikeF} ${"F"}`
+    fourthH4.textContent = `${"Currently: "} ${"Feels Like"}      ${result.current_condition[0].FeelsLikeF}${"°F"}`
      article.append(h3, h4, secondH4, thirdH4, fourthH4)
      section.append(article)
 }
