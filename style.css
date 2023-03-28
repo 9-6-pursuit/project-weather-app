@@ -91,7 +91,7 @@ button:hover {
 
 .lower-box {
     padding: 10px;
-    border: 3px dotted;
+    /* border: 3px dotted purple; */
     display: grid;
     grid-template-columns: 1fr 2fr 1fr
 }
@@ -116,14 +116,11 @@ button:hover {
 footer{
   padding: 5px;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  border: 1px dotted yellow;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* border: 1px dotted yellow; */
 }
 
- /* .card {
-  border: 3px solid #4f7d5d;
-  padding: 25px;
-} */
+
 /* 
 .hidden {
   display: none;
