@@ -54,13 +54,41 @@ const fillWeatherBox = (json, cityName) => {
    temperature.innerHTML = `<strong>Currently</strong> Feels like ${temperatureValue}°F`
    weatherBox.append(temperature)   
 
-     let sunshine = json.weather[0].hourly[0].chanceofsunshine
-     console.log(sunshine)
+     let sunshineValue = json.weather[0].hourly[0].chanceofsunshine
+     console.log(sunshineValue)
+     if(sunshineValue > 50){
+         let sunshine = document.createElement("img")
+     sunshine.className = `weather-box-item`
+     sunshine.setAttribute("src","assets/icons8-summer.gif") 
+     sunshine.setAttribute("alt","sun") 
+     weatherBox.prepend(sunshine)
+     }
 
+     let rainValue = json.weather[0].hourly[0].chanceofrain
+     console.log(rainValue)
+     if(rainValue > 50){
+         let rain = document.createElement("img")
+     rain.className = `weather-box-item`
+     rain.setAttribute("src","assets/icons8-torrential-rain.gif") 
+     rain.setAttribute("alt","rain") 
+     weatherBox.prepend(rain)
+     }
 
-    let removeP = document.querySelector("p")
-    removeP.remove()
-    // removeP.innerHTML = ""
+     let snowValue = json.weather[0].hourly[0].chanceofsnow
+     console.log(snowValue)
+     if(snowValue > 50){
+         let snow = document.createElement("img")
+     snow.className = `weather-box-item`
+     snow.setAttribute("src","assets/icons8-light-snow.gif") 
+     snow.setAttribute("alt","snow") 
+     weatherBox.prepend(snow)
+     }
+
+     let removeP = document.querySelector("p")
+     if (removeP) {
+         removeP.remove()
+     }
+
     let newInfo = document.createElement("li")
     newInfo.innerHTML = `${cityName} - ${temperatureValue}°F`
     previousBox.append(newInfo)
