@@ -63,10 +63,10 @@ const fillWeatherBox = (json, entered) => {
     let currently = json.current_condition[0].FeelsLikeF
     let curr = document.createElement("li")
     curr.classList = "newAddedLines"
-    curr.setAttribute("id", "toggel")
+    curr.setAttribute("id", "tog")
     curr.innerHTML =`<strong>Currently:</strong> ${currently}°F`
     weatherBox.append(curr)
-    console.log(json);
+    
 
    let addOn = document.getElementById("weather-box-addon")
     //console.log(addOn)
@@ -77,20 +77,27 @@ const fillWeatherBox = (json, entered) => {
     let sideAddition = document.getElementById("weather-box-item")
     sideAddition.append(newAddOn)
 
+
+    let celcius = json.current_condition[0].FeelsLikeC
+    let cel = document.createElement("li")
+    cel.classList = "newAddedLines"
+    cel.setAttribute("id", "tog1")
+    cel.innerHTML =`<strong>Currently:</strong> ${celcius}°C`
+    weatherBox.append(cel)
    
-        // const toggel = document.getElementById("last-Button")
-        // toggel.addEventListener("click",event => {
-        //    hide = document.getElementById("toggel")
-        //    //hide.setAttribute("hidden",true)
-        //    let celcius = json.current_condition[0].FeelsLikeC
-        //    let cel = document.createElement("li")
-        //    cel.classList = "newAddedLines hide2"
-        //    cel.innerHTML =`<strong>Currently:</strong> ${celcius}°C`
-        //    weatherBox.append(cel)
-          
-           
-        // })
+         const toggel = document.getElementById("last-Button")
+         toggel.addEventListener("click",event => {
+            if (curr.style.display === "block" && cel.style.display === "none" ){
+                curr.style.display = "none"
+                cel.style.display = "block"
+            }   else {
+                curr.style.display = "block"
+                cel.style.display = "none"
+                }
+        })
 
         // console.log(json);
     
+        
+       
 }
