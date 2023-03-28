@@ -19,6 +19,7 @@ body{
 .banner-form{
   background-color: rgb(73, 137, 144);
   border:3px solid black;
+  border-radius: 8px;
   color: white;
   text-align: center;
   margin: 10 auto 40 10;
@@ -31,7 +32,7 @@ body{
 
 .search-results{
   display: grid;
-  grid-template-columns: 70% 30%;
+  grid-template-columns: 25% 50% 25%;
   width: 90%;
 }
 #city-results{
@@ -83,31 +84,33 @@ ul {
   flex-direction: column;
   justify-content: left;
 }
-.today{
-  border: 1px solid black; 
-  border-radius: 8px;
-  display:flex;
-  flex-direction: column;
-  margin-left: -20px;
-  padding: 10px;
-  
-}
-.tomorrow{
-  border: 1px solid black; 
-  border-radius: 8px;
-  display:flex;
-  flex-direction: column;
-}
 .forecast{
   padding: 15px;
   margin-left: 5px;
   line-height: 40px;
 }
-.day-after-tomorrow{
-  border: 1px solid black; 
+.today{
+  border: 3px solid rgb(172, 168, 168); 
   border-radius: 8px;
   display:flex;
   flex-direction: column;
+  /* margin-left: -20px; */
+  min-height: 180px;
+  padding: 10px;
+}
+.tomorrow{
+  border: 3px solid rgb(172, 168, 168); 
+  border-radius: 8px;
+  display:flex;
+  flex-direction: column;
+  min-height: 170px;
+}
+.day-after-tomorrow{
+  border: 3px solid rgb(172, 168, 168); 
+  border-radius: 8px;
+  display:flex;
+  flex-direction: column;
+  min-height: 170px;
   padding: 10px;
 }
 #three-day-forecast{
