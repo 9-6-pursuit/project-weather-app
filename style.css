@@ -30,7 +30,6 @@ p {
 }
 
 .upper-box-items {
-    /* border: 3px solid pink; */
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -56,9 +55,10 @@ p {
     padding: 15px;
 }
 
-/* .search-list {
-    border: 3px solid #ef6a6a;
-} */
+.search-list {
+    background-color: #dedede;
+    margin-left: 5px;
+}
 
 .sublist {
     padding-left: 10px;
@@ -70,9 +70,9 @@ p {
 }
 
 .bottom {
-    /* border: 2px solid teal; */
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     padding: 10px 20px 10px 0px;
@@ -85,7 +85,11 @@ p {
     justify-content: center;
 }
 
+.bottom-header {
+    font-size: 17px;
+}
+
 .bottom-text {
-    font-size: 14px;
+    font-size: 15px;
     padding: 8px;
 }

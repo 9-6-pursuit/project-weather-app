@@ -14,17 +14,32 @@ searchButton.addEventListener("click", (event) => {
     }
 })
 
+input.addEventListener("keypress", event => {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        searchButton.click();
+    }
+})
+
 function showWeather(json) {
     let weatherBox = document.querySelector(".weather-box");
-    // weatherBox.innerHTML = "";
+    let searchList = document.querySelector(".search-list");
+    let history = `${json.nearest_area[0].areaName[0].value} (${json.current_condition[0].FeelsLikeF}°F)`
+
     if (!clickCount) {
         document.getElementById("empty").remove();
         document.querySelector(".nolist").remove();
+        searchList.innerHTML += `<li class="sublist">${history}</li>`;
         clickCount ++;
     }
     else {
         let boxItems = document.querySelectorAll(".weather-box-item");
         boxItems.forEach(item => item.remove());
+    }
+
+    if (!searchList.innerHTML.includes(history)) {
+        let listHeader = document.getElementById("history-h3");
+        listHeader.insertAdjacentHTML("afterend", `<li class="sublist">${history}</li>`);
     }
 
     let header = document.createElement("h2");
@@ -49,20 +64,13 @@ function showWeather(json) {
     currently.innerHTML = `<strong>Currently:</strong> Feels like ${json.current_condition[0].FeelsLikeF}°F`;
 
     weatherBox.prepend(header, area, region, country, currently);
-    let history = `${json.nearest_area[0].areaName[0].value} (${json.current_condition[0].FeelsLikeF}°F)`;
-
-    let searchList = document.querySelector(".search-list");
-    let listItem = document.createElement("li");
-    listItem.className = "sublist";
-    listItem.textContent = history;
-    searchList.append(listItem);
 
     let days = ["Today", "Tomorrow", "Day After Tomorrow"];
     for (let i = 0; i < 3; i++) {
         let theDay = document.querySelector(`.day${i}`);
         theDay.innerHTML = "";
         let header = document.createElement("h3");
-        header.className = "bottom-text";
+        header.className = "bottom-header";
         header.innerText = days[i];
         let avgTemp = document.createElement("li");
         avgTemp.className = "bottom-text";
@@ -75,7 +83,7 @@ function showWeather(json) {
         minTemp.innerHTML = `<strong>Min Temperature:</strong> ${json.weather[i].mintempF}°F`;
         theDay.append(header, avgTemp, maxTemp, minTemp);
     }
-    document.querySelector(".bottom").style.border = "2px solid teal";
+    document.querySelector(".bottom").style["background-color"] = "#bbbbbb";
 }
 
 function showError(error) {
