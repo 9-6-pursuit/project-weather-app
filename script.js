@@ -3,14 +3,12 @@ const cityNameInput = document.getElementById("city-name-input")
 const searchButton = document.getElementById("search-button")
 const mainBody = document.getElementById("daBody")
 const previousBox = document.getElementById("previous-search-list")
-// const removeP = document.queryElementById("trying-to-remove-this")
-
 
 const todayBox = document.getElementById("todayBox")
 const tomorrowBox = document.getElementById("tomorrowBox")
 const afterTomorrowBox = document.getElementById("afterTomorrowBox")
 
-searchButton.addEventListener("click", event => {
+searchButton.addEventListener("click", (event) => {
     let cityName = cityNameInput.value
     cityNameInput.value = ""
     
@@ -54,45 +52,40 @@ const fillWeatherBox = (json, cityName) => {
    temperature.innerHTML = `<strong>Currently</strong> Feels like ${temperatureValue}°F`
    weatherBox.append(temperature)   
 
-     let sunshineValue = json.weather[0].hourly[0].chanceofsunshine
-     console.log(sunshineValue)
+     let sunshineValue = json.weather[0].hourly[0].chanceofsunshine //This codes is for the sun icon
      if(sunshineValue > 50){
          let sunshine = document.createElement("img")
-     sunshine.className = `weather-box-item`
-     sunshine.setAttribute("src","assets/icons8-summer.gif") 
-     sunshine.setAttribute("alt","sun") 
-     weatherBox.prepend(sunshine)
+        sunshine.setAttribute("src","assets/icons8-summer.gif") 
+        sunshine.setAttribute("alt","sun") 
+        weatherBox.prepend(sunshine)
      }
 
-     let rainValue = json.weather[0].hourly[0].chanceofrain
-     console.log(rainValue)
+     let rainValue = json.weather[0].hourly[0].chanceofrain //This code is for the rain icon
      if(rainValue > 50){
          let rain = document.createElement("img")
-     rain.className = `weather-box-item`
-     rain.setAttribute("src","assets/icons8-torrential-rain.gif") 
-     rain.setAttribute("alt","rain") 
-     weatherBox.prepend(rain)
+        rain.className = `weather-box-item`
+        rain.setAttribute("src","assets/icons8-torrential-rain.gif") 
+        rain.setAttribute("alt","rain") 
+        weatherBox.prepend(rain)
      }
 
-     let snowValue = json.weather[0].hourly[0].chanceofsnow
-     console.log(snowValue)
+     let snowValue = json.weather[0].hourly[0].chanceofsnow  //This code is for the snow icon
      if(snowValue > 50){
          let snow = document.createElement("img")
-     snow.className = `weather-box-item`
-     snow.setAttribute("src","assets/icons8-light-snow.gif") 
-     snow.setAttribute("alt","snow") 
-     weatherBox.prepend(snow)
+         snow.className = `weather-box-item`
+        snow.setAttribute("src","assets/icons8-light-snow.gif") 
+        snow.setAttribute("alt","snow") 
+        weatherBox.prepend(snow)
      }
 
      let removeP = document.querySelector("p")
-     if (removeP) {
-         removeP.remove()
-     }
+        if (removeP) {
+            removeP.remove()
+             }
 
     let newInfo = document.createElement("li")
     newInfo.innerHTML = `${cityName} - ${temperatureValue}°F`
     previousBox.append(newInfo)
-
 
     todayBox.innerHTML = ""
 
@@ -105,21 +98,18 @@ const fillWeatherBox = (json, cityName) => {
    todayAvrgTemp.className = "threeDays"
    todayAvrgTemp.innerHTML = `<strong>Average Temperature:</strong> ${todayAvrgTempValue}°F`
    todayBox.append(todayAvrgTemp)
-    console.log(todayAvrgTempValue)
 
    let todayMaxTempValue = json.weather[0].maxtempF
    let todayMaxTemp = document.createElement("li")
    todayMaxTemp.className = "threeDays"
    todayMaxTemp.innerHTML = `<strong>Max Temperature:</strong> ${todayMaxTempValue}°F`
    todayBox.append(todayMaxTemp)
-    console.log(todayMaxTempValue)
 
    let todayMinTempValue = json.weather[0].mintempF
    let todayMinTemp = document.createElement("li")
    todayMinTemp.className = "threeDays"
    todayMinTemp.innerHTML = `<strong>Min Temperature:</strong> ${todayMinTempValue}°F`
-   todayBox.append(todayMinTemp)
-    console.log(todayMinTempValue) //Today ends here
+   todayBox.append(todayMinTemp) //Today ends here
 
     tomorrowBox.innerHTML = ""
 
@@ -132,21 +122,18 @@ const fillWeatherBox = (json, cityName) => {
    tomorrowAvrgTemp.className = "threeDays"
    tomorrowAvrgTemp.innerHTML = `<strong>Average Temperature:</strong> ${tomorrowAvrgTempValue}°F`
    tomorrowBox.append(tomorrowAvrgTemp)
-    console.log(tomorrowAvrgTempValue)
 
    let tomorrowMaxTempValue = json.weather[1].maxtempF
    let tomorrowMaxTemp = document.createElement("li")
    tomorrowMaxTemp.className = "threeDays"
    tomorrowMaxTemp.innerHTML = `<strong>Max Temperature:</strong> ${tomorrowMaxTempValue}°F`
    tomorrowBox.append(tomorrowMaxTemp)
-    console.log(tomorrowMaxTempValue)
 
    let tomorrowMinTempValue = json.weather[1].mintempF
    let tomorrowMinTemp = document.createElement("li")
    tomorrowMinTemp.className = "threeDays"
    tomorrowMinTemp.innerHTML = `<strong>Min Temperature:</strong> ${tomorrowMinTempValue}°F`
-   tomorrowBox.append(tomorrowMinTemp)
-    console.log(tomorrowMinTempValue) //Tomorrow Ends here
+   tomorrowBox.append(tomorrowMinTemp) //Tomorrow Ends here
 
     afterTomorrowBox.innerHTML = ""
 
@@ -159,20 +146,16 @@ const fillWeatherBox = (json, cityName) => {
    afterTomorrowAvrgTemp.className = "threeDays"
    afterTomorrowAvrgTemp.innerHTML = `<strong>Average Temperature:</strong> ${afterTomorrowAvrgTempValue}°F`
    afterTomorrowBox.append(afterTomorrowAvrgTemp)
-    console.log(afterTomorrowAvrgTempValue)
 
    let afterTomorrowMaxTempValue = json.weather[2].maxtempF
    let afterTomorrowMaxTemp = document.createElement("li")
    afterTomorrowMaxTemp.className = "threeDays"
    afterTomorrowMaxTemp.innerHTML = `<strong>Max Temperature:</strong> ${afterTomorrowMaxTempValue}°F`
    afterTomorrowBox.append(afterTomorrowMaxTemp)
-    console.log(afterTomorrowMaxTempValue)
 
    let afterTomorrowMinTempValue = json.weather[2].mintempF
    let afterTomorrowMinTemp = document.createElement("li")
    afterTomorrowMinTemp.className = "threeDays"
    afterTomorrowMinTemp.innerHTML = `<strong>Min Temperature:</strong> ${afterTomorrowMinTempValue}°F`
-   afterTomorrowBox.append(afterTomorrowMinTemp)
-    console.log(afterTomorrowMinTempValue) //Day After Tomorrow ends here
-
+   afterTomorrowBox.append(afterTomorrowMinTemp)//Day After Tomorrow ends here
 }
