@@ -22,18 +22,30 @@
         </header>
     <main class="lower-box">
         <div class="convert-temperature">
-            <h1 class="top">Convert Temperature</h1>
-
+            <h1 class="top converter">Convert Temperature</h1>
+            <p>
+                <label id="FtoC">Farenheit to Celsius</label>
+                <input type="number" id="Farenheit" placeholder="Input Farenheit Here"
+                oninput="fToCConverter(this.value)"
+                onchange="fToCConverter(this.value)">
+            </p>
+            <p>F to C: <span id="CelsiusOutput"></span></p>
+            <p>
+                <label id="CtoF">Celsius to Farenheit</label>
+                <input type="number" id="Celsius" placeholder="Input Celsius Here"
+                oninput="cToFConverter(this.value)"
+                onchange="cToFConverter(this.value)">
+            </p>
+            <p>C to F: <span id="FarenheitOuput"></span></p>
+            <!-- temp converter stuff -->
         </div>
         <div class="weather-box">
             <h1 class="title top">Choose A Location</h1>
             <!-- location chosen goes here -->
         </div>
         <div class="previous-searches-list">
-            <h1 class="top">Previous Searches</h1>
-            <ul class="previous-searches-list ">
-                <li></li>
-            </ul>
+            <h1 class="top previous-searches-h1">Previous Searches</h1>
+            <!-- previous searche here -->
         </div>
     </main>
     </section>
