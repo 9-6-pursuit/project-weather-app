@@ -21,6 +21,32 @@
         </header>
 
         <section class="output-box">
+            <div class="conversion">
+                <form class="conversion-form">
+                    <li>
+                        <label for="temperature">convert the temperature:</label>
+                        <input type="number" name="temperature" id="temperature">
+                    <li>
+                    <li>
+                        <label for="to-celsius">To Celsius</label>
+                        <input type="radio" id="to-celsius" name="conversion" value="celsius">
+                    </li>
+                    <li>
+                        <label for="to-fahrenheit">To Fahrenheit</label>
+                        <input type="radio" id="to-fahrenheit" name="conversion" value="fahrenheit">
+                    </li>
+                    <li>
+                        <button>Submit</button>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>0.00</strong>
+                        </p>
+                    </li>
+                </form>
+
+            </div>
+
             <div class="current-search" id="weather-data">
                 <ul>
                     <li>Choose a location to view the weather</li>
