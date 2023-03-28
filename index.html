@@ -29,7 +29,11 @@
 		<aside class="widget-temperature">
 			<form id="form-widget-temp">
 				<label for="temp">Convert the temperature:</label>
-				<input type="number" id="temp" class="tempName" required />
+				<input
+					type="number"
+					id="temp-to-convert"
+					class="tempName"
+					required />
 				<div class="temps">
 					<label for="celsius">To Celsius</label>
 					<input type="radio" id="to-c" />
@@ -38,13 +42,16 @@
 				</div>
 				<input type="submit" class="button" value="Submit" />
 			</form>
-			<label id="result">0.00</label>
+			<h4 id="result">0.00</h4>
 		</aside>
 
 		<main>
-            Choose a location to view the weather
-        </main>
-		<aside>
+			<article id="mainarticle">
+				<p id="m1">Choose a location to view the weather</p>
+			</article>
+			<aside id="mainaside"></aside>
+		</main>
+		<aside id="historys">
 			<section id="section-history">
 				Previous Searches
 				<p id="m2">No previous searches</p>
@@ -53,3 +60,4 @@
 		</aside>
 	</body>
 </html>
+
