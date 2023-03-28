@@ -36,7 +36,7 @@ searchButton.addEventListener("click", event => {
 
 const fillWeatherBox = (json, entered) => {
     weatherBox.innerHTML = ""
-    window.montreal = json
+     //window.sydney = json
 
     let newHead = document.createElement("h3")
     newHead.textContent = entered
@@ -63,14 +63,10 @@ const fillWeatherBox = (json, entered) => {
     let currently = json.current_condition[0].FeelsLikeF
     let curr = document.createElement("li")
     curr.classList = "newAddedLines"
+    curr.setAttribute("id", "toggel")
     curr.innerHTML =`<strong>Currently:</strong> ${currently}°F`
     weatherBox.append(curr)
-   // console.log(json);
-
-//    let icon = json.current_condition[0].weatherDesc[0]
-//    let image = document.createElement("img")
-//    image.src="icon8-summer.gif"
-//    weatherBox.append(image)
+    console.log(json);
 
    let addOn = document.getElementById("weather-box-addon")
     //console.log(addOn)
@@ -81,4 +77,20 @@ const fillWeatherBox = (json, entered) => {
     let sideAddition = document.getElementById("weather-box-item")
     sideAddition.append(newAddOn)
 
+   
+        // const toggel = document.getElementById("last-Button")
+        // toggel.addEventListener("click",event => {
+        //    hide = document.getElementById("toggel")
+        //    //hide.setAttribute("hidden",true)
+        //    let celcius = json.current_condition[0].FeelsLikeC
+        //    let cel = document.createElement("li")
+        //    cel.classList = "newAddedLines hide2"
+        //    cel.innerHTML =`<strong>Currently:</strong> ${celcius}°C`
+        //    weatherBox.append(cel)
+          
+           
+        // })
+
+        // console.log(json);
+    
 }
