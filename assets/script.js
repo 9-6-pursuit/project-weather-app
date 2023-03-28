@@ -4,13 +4,22 @@
 const button = document.querySelector('#weather-button');
 let prevHeaderH4 = false;
 let prevHeaderUl = false;
+let prevSearches = false;
+
+let initSearchArea = document.querySelector('#city-results')
+initSearchArea.innerHTML = `<p class='initSearchArea'>Choose a location to view the weather.</p>`
+let initPrevSearchArea = document.querySelector('#previous-searches')
+initPrevSearchArea.innerHTML = `<h4><strong>Previous Searches</h4><font size=-1><p>No previous searches.</p></font>`
+let initThreeDayForecast = document.querySelector('#three-day-forecast')
 
 button.addEventListener("click", (event)=> {
   event.preventDefault();
   let city = document.querySelector("#location").value;
-  let currentResult = document.querySelector('#city-results')
+  let currentResult = document.querySelector('#city-results');
     currentResult.innerHTML = "";
-    fetch(`https://wttr.in/${city}?format=j1`)
+    initThreeDayForecast.innerText = "";
+    prevSearches = prevSearches ? true : initPreviousSearch()
+    fetch(`https://wttr.in/${city}?format=j1`)  
     .then((response) => response.json())
     .then((json) => {
        displayWeather(json, city)
@@ -26,7 +35,6 @@ const displayWeather = (weatherData,city) => {
   const cityName = document.createElement('h2')
   const weatherResultList = document.createElement('ul')
 
-  
   location.innerHTML = "";
   cityName.innerText = city;
 
@@ -47,19 +55,27 @@ const displayWeather = (weatherData,city) => {
   let countryText =  weatherData.nearest_area[0].country[0].value;
   country.innerHTML =  `<strong> Country:</strong> ${countryText}`
   weatherResultList.append(country)
-    
+  
   //console.log('feelsLike: ', weatherData.current_condition[0].FeelsLikeF)
   const currentTemp = document.createElement('li')
   let feelsLikeText = weatherData.current_condition[0].FeelsLikeF;
   currentTemp.innerHTML = `<strong> Currently:</strong> Feels Like ${feelsLikeText}°F` 
+  let todayDate = document.createElement('li')
+  todayDate.innerHTML = `<strong>Today's Date: </strong>${weatherData.weather[0].date}`
   weatherResultList.append(currentTemp)
+  weatherResultList.append(todayDate)
   cityResults.append(weatherResultList)
   let prevCitySearch = city;
   let prevFeelsLike = feelsLikeText
   showPreviousSearchItem(prevCitySearch,prevFeelsLike)
-  
+
+  showForecast(weatherData,city)
 }
 
+function initPreviousSearch(){
+  initPrevSearchArea.innerHTML = "";
+  return true;
+}
 const showPreviousSearchItem = (prevCitySearch,prevFeelsLike) => {
   //console.log('prevCity & PrevFeelsLike:',prevCitySearch,prevFeelsLike)
   let previousSearchDiv = document.querySelector('#previous-searches')
@@ -72,7 +88,6 @@ const showPreviousSearchItem = (prevCitySearch,prevFeelsLike) => {
   }
   
   createPrevListItems(previousSearchDiv,prevCitySearch, prevFeelsLike) //creates a list item
-  extraFeatures(previousSearchDiv,prevCitySearch, prevFeelsLike)
   listItemText = ""
 }
 
@@ -111,37 +126,80 @@ const createPrevListItems = (previousSearchDiv,prevCitySearch, prevFeelsLike) =>
   previousSearchDiv.append(previousListItem);
 }
 
-const extraFeatures = (previousSearchDiv, prevCitySearch, prevFeelsLike) => {
-  const threeDayForecast = document.querySelectorAll('.extra-features');
+const showForecast = (weatherData,city) => {
+
+  const threeDayForecast = document.querySelector('#three-day-forecast');
   let days = ['Today','Tomorrow','Day After Tomorrow']
-  console.log(days[0],days[1],days[2])
-  threeDayForecast.innerHTML = "<h4>Today, Tomorrow, Day After Tomorrow</h4>"
 
-  // days.forEach((day) => {
-    //Average Temperature:
+  /* todaySection */
+    let todaySection = document.createElement('div') //<---
+    let todayName = document.createElement('h3')
+    todayName.innerText = days[0]
+    let todayNameUL = document.createElement('ul') // <---
+    todayNameUL.setAttribute('class', `${days[0].toLowerCase()} forecast`)
+    let avgTempLi = document.createElement('li')
+    avgTempLi.innerHTML = `<strong>Average Temperature:</strong> ${weatherData.weather[0].avgtempF}`
+    let maxTempLi = document.createElement('li')
+    maxTempLi.innerHTML = `<strong>Max Temperature:</strong> ${weatherData.weather[0].maxtempF}`
+    let minTempLi = document.createElement('li')
+    minTempLi.innerHTML = `<strong>Min Temperature:</strong> ${weatherData.weather[0].mintempF}`
+    let todayDate = document.createElement('li')
+    todayDate.innerHTML = `<strong>Today's Date: </strong>${weatherData.weather[0].date}`
+    todayNameUL.append(avgTempLi)
+    todayNameUL.append(maxTempLi)
+    todayNameUL.append(minTempLi)
+    todayNameUL.append(todayDate)
+    todaySection.append(todayName)
+    todaySection.append(todayNameUL)
+    threeDayForecast.append(todaySection);
     
-    let todayHdr = document.createElement('h4')
-    todayHdr.innerText = days;
-    console.log(todayHdr.innerText)
-    //threeDayForecast.innerHTML = "<h4>Today, Tomorrow, Day After Tomorrow</h4>"
-    // console.log('threeDayForecast',threeDayForecast);
+    // Average Temperature:
+    //Max Temperature:
+    //Min Temperature:
+    
+    /* tomorrowSection */
+    let tomorrowSection = document.createElement('div') //<---
+    let tomorrowName = document.createElement('h3')
+    tomorrowName.innerText = days[1]
+    let tomorrowNameUL = document.createElement('ul') // <---
+    tomorrowNameUL.setAttribute('class', `${days[1].toLowerCase()} forecast`)
+    let tomorrowAvgTempLi = document.createElement('li')
+    tomorrowAvgTempLi.innerHTML = `<strong>Average Temperature:</strong> ${weatherData.weather[1].avgtempF}`
+    let tomorrowMaxTempLi = document.createElement('li')
+    tomorrowMaxTempLi.innerHTML = `<strong>Max Temperature:</strong> ${weatherData.weather[1].maxtempF}`
+    let tomorrowMinTempLi = document.createElement('li')
+    tomorrowMinTempLi.innerHTML = `<strong>Min Temperature:</strong> ${weatherData.weather[1].mintempF}`
+    let tomorrowDate = document.createElement('li')
+    tomorrowDate.innerHTML = `<strong>Weather For: </strong>${weatherData.weather[1].date}`
+    tomorrowNameUL.append(tomorrowAvgTempLi)
+    tomorrowNameUL.append(tomorrowMaxTempLi)
+    tomorrowNameUL.append(tomorrowMinTempLi)
+    tomorrowNameUL.append(tomorrowDate)
+    tomorrowSection.append(tomorrowName)
+    tomorrowSection.append(tomorrowNameUL)
+    threeDayForecast.append(tomorrowSection);
+    
+    
+    /* dayAfterTomorrowSection */
+    let dayAfterTomorrowSection = document.createElement('div') //<---
+    let dayAfterTomorrowName = document.createElement('h3')
+    dayAfterTomorrowName.innerText = days[2]
+    let dayAfterTomorrowNameUL = document.createElement('ul') // <---
+    dayAfterTomorrowNameUL.setAttribute('class', `${days[2].toLowerCase()} forecast`)
+    let dayAfterTomorrowAvgTempLi = document.createElement('li')
+    dayAfterTomorrowAvgTempLi.innerHTML = `<strong>Average Temperature:</strong> ${weatherData.weather[2].avgtempF}`
+    let dayAfterTomorrowMaxTempLi = document.createElement('li')
+    dayAfterTomorrowMaxTempLi.innerHTML = `<strong>Max Temperature:</strong> ${weatherData.weather[2].maxtempF}`
+    let dayAfterTomorrowMinTempLi = document.createElement('li')
+    dayAfterTomorrowMinTempLi.innerHTML = `<strong>Min Temperature:</strong> ${weatherData.weather[2].mintempF}`
+    let dayAfterTomorrowDate = document.createElement('li')
+    dayAfterTomorrowDate.innerHTML = `<strong>Weather for:</strong>${weatherData.weather[2].date}`
+    dayAfterTomorrowNameUL.append(dayAfterTomorrowAvgTempLi)
+    dayAfterTomorrowNameUL.append(dayAfterTomorrowMaxTempLi)
+    dayAfterTomorrowNameUL.append(dayAfterTomorrowMinTempLi)
+    dayAfterTomorrowNameUL.append(dayAfterTomorrowDate)
+    dayAfterTomorrowSection.append(dayAfterTomorrowName)
+    dayAfterTomorrowSection.append(dayAfterTomorrowNameUL)
+    threeDayForecast.append(dayAfterTomorrowSection);
 
-    // let todayUl = document.createElement('ul')
-    // let avgTemp = document.createElement('li')
-    // avgTemp.setAttribute('class', day)
-    // avgTemp.innerText = 'Tomorrow';
-    // threeDayForecast.append(avgTemp)
-    
-    // //Max Temperature:
-    // let maxTemp = document.createElement('li')
-    // maxTemp.setAttribute('class', day)
-    // maxTemp.innerText = day
-    // threeDayForecast.append(maxTemp)
-    
-    // //Min Temperature:
-    // let minTemp = document.createElement('li')
-    // minTemp.setAttribute('class', day)
-    // minTemp.innerText = day;
-    // threeDayForecast.append(minTemp)
-  // })
 }

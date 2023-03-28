@@ -3,21 +3,24 @@ body{
   display: flex;
   font-family: 'Atkinson Hyperlegible', sans-serif;
   /* font-family: 'Merriweather Sans', sans-serif; */
+  font-weight: normal;
   flex-direction: column;
-  text-align: center;
+  text-align: left;
+}
+.initSearchArea{
+  color: lightslategray;
 }
 .container{
   align-items: center;
-  border:3px solid rgb(234, 0, 234);
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 95%;
 }
 .banner-form{
   background-color: rgb(73, 137, 144);
   border:3px solid black;
   color: white;
-  justify-content: center;
+  text-align: center;
   margin: 10 auto 40 10;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -27,19 +30,22 @@ body{
 }
 
 .search-results{
-  border:3px solid rgb(0, 0, 234);
   display: grid;
-  grid-template-columns: 60% 30%;
+  grid-template-columns: 70% 30%;
   width: 90%;
 }
 #city-results{
   border: 3px solid rgb(11, 230, 121);
-  background-color: lightgray;
+  background-color: rgb(238, 227, 227);
   border-radius: 8px;
+  color:rgb(45, 39, 42);
+  display: flex;
+  flex-direction: column;
   line-height: 30px;
   margin: 5%;
-  margin-left: 50px;
+  min-height: 50px;
   padding:5%;
+  text-align: center;
 }
 
 .hide{
@@ -51,7 +57,7 @@ body{
   display:flex;
   flex-direction: column;
   line-height: 18px;
-  padding-top: 15px;
+  padding-top: 20px;
 }
 .extra-features{
   border: 1px solid rgb(45, 39, 39);
@@ -82,6 +88,9 @@ ul {
   border-radius: 8px;
   display:flex;
   flex-direction: column;
+  margin-left: -20px;
+  padding: 10px;
+  
 }
 .tomorrow{
   border: 1px solid black; 
@@ -89,9 +98,23 @@ ul {
   display:flex;
   flex-direction: column;
 }
+.forecast{
+  padding: 15px;
+  margin-left: 5px;
+  line-height: 40px;
+}
 .day-after-tomorrow{
   border: 1px solid black; 
   border-radius: 8px;
   display:flex;
   flex-direction: column;
+  padding: 10px;
+}
+#three-day-forecast{
+  display: flex;
+  text-align: center;
+  
+}
+#three-day-forecast > h4{
+font-weight: bold;
 }
