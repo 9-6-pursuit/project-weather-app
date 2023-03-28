@@ -19,43 +19,47 @@
                 <input id="input" type="text">
                 <button type="submit">Get Weather </button>
             </form>
-        </header>
             </ul>
+        </header>
         </div>
-        <aside class="conversion">
-            <form id="conversionForm">
-                <strong><label for="temp-to-convert">Convert the Temperature:</label></strong>
-                <br>
-                <br>
-                    <input type="number" name="convert" id="temp-to-convert" />
-                    <br>
-                    <br>
-                    <input type="radio" name="conv" value="C" id="to-c" />
-                    <label> °Celsius</label>
-                <br>
-                    <input type="radio" name="conv" value="F" id="to-f" />
-                    <label>°Fahrenheit</label>
-                <br>
-                <br>
-                    <input type="submit" value="submit" />
-                    <h4 id="result"></h4>
-                </form>
-        </aside>
+        
     <main>
         <article class="lower-box">
+            <aside class="conversion">
+                <form id="conversionForm">
+                    <strong><label for="temp-convert">Convert the Temperature:</label></strong>
+                    <br>
+                    <br>
+                        <input type="number" name="convert" id="temp-convert" />
+                        <br>
+                        <br>
+                        <input type="radio" name="conv" value="C" id="to-c" />
+                        <label> °Celsius</label>
+                    <br>
+                        <input type="radio" name="conv" value="F" id="to-f" />
+                        <label>°Fahrenheit</label>
+                    <br>
+                    <br>
+                        <input type="submit" value="submit" />
+                        <h4 id="result"></h4>
+                    </form>
+            </aside>
            <div class="weather-box"> Choose a location to view the weather</div>
-              <ul class="previous-search">
-                 <h3>Previous Searches</h3>
-                 <li>No previous searches.</li>
-              </ul>
+              <aside class="previous-search">
+                <section>
+                 <h4>Previous Searches</h4>
+                 <br>
+                 <p> No previous searches</p>
+                </section>
+                 </aside>
             </div>
         </article>
-       <aside>
-        <article></article>
-        <article></article>
-        <article></article>
-       </aside>
+
     </main>
- 
+    <aside class="future-weather">
+        <article class="today"><strong><h3>Today</h3></strong></article>
+        <article class="tomorrow"><strong><h3>Tomorrow</h3></strong></article>
+        <article class="after"><strong><h3>Day After Tomorrow</h3></strong><article>
+       </aside>
 </body>
 </html>
