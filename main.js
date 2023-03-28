@@ -1,6 +1,8 @@
 const weatherBox = document.getElementById('weather-box')
 const cityNameInput = document.getElementById('city-name-input')
 const searchButton = document.getElementById('search-button')
+let previousSearches = document.querySelector('.previous-searches-list')
+let previousSearchArr = []
 
 searchButton.addEventListener('click', event => {
     let cityName = cityNameInput.value
@@ -27,4 +29,33 @@ const fillWeatherBox = (json, cityName) => {
     area.className = `weather-box-item`
     area.innerHTML = `<strong>Area:</strong> ${areaName}`
     weatherBox.append(area)
+
+    let regionName = json.nearest_area[0].region[0].value
+    let region = document.createElement('li')
+    region.className = `weather-box-item`
+    region.innerHTML = `<strong>Region:</strong> ${regionName}`
+    weatherBox.append(region)
+
+    let countryName = json.nearest_area[0].country[0].value
+    let country = document.createElement('li')
+    country.className = `weather-box-item`
+    country.innerHTML = `<strong>Country:</strong> ${countryName}`
+    weatherBox.append(country)
+
+    let temperatureValue = json.current_condition[0].FeelsLikeF
+    let temperature = document.createElement('li')
+    temperature.className = `weather-box-item`
+    temperature.innerHTML = `<strong>Currently:</strong> Feels like ${temperatureValue}`
+    weatherBox.append(temperature)
+
+    let previous = document.createElement('li')
+    previous.addEventListener('click', event => {
+        fillWeatherBox(json, cityName)
+    })
+    previous.innerHTML = `<strong>${cityName}</strong>`
+    if (!previousSearchArr.includes(cityName)) {
+        previousSearchArr.push(cityName)
+        previousSearches.append(previous)
+        document.querySelector('.noSearches').remove()
+    }
 }

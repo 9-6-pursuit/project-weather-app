@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <script defer src="./main.js"></script>
     <title>Weather App</title>
 </head>
 <body>
@@ -12,15 +13,18 @@
         <div class="upper-box">
             <h1>Weather App</h1>
             <ul class="upper-box-items">
-                <li>Pick A Location</li>
-                <input type="text">
-                <button>Get Weather</button>
+                <li class="upper-box-item">Pick A Location</li>
+                <input type="text" class="upper-box-item" id="city-name-input">
+                <button class="upper-box-item" id="search-button">Get Weather</button>
             </ul>
         </div>
         <div class="lower-box">
-            <div class="weather-box">Choose a location to view weather.</div>
-            <ul class="previous-searches-list"></ul>
+            <div class="weather-box" id="weather-box">Choose a location to view weather.</div>
+            <div>
+            <ul class="previous-searches-list">
             <h3>Previous Searches</h3>
+            <li class="noSearches"><em>No previous searches.</em></li></ul>
+            </div>
         </div>
     </div>
 </body>

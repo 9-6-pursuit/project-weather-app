@@ -10,35 +10,32 @@ li {
 }
 
 .page-container {
-    border: 3px solid green;
     width: 65%;
+    margin: 20px
 }
 
 .upper-box {
     align-items: center;
-    border: 3px solid red;
+    color: white;
+    border: 3px solid black;
+    background-color: teal;
     display: flex;
     flex-direction: column;
-}
-
-.upper-box-items {
-    border: 3px solid rgb(rgb(120, 15, 15), rgb(17, 90, 17), rgb(17, 17, 27));
+    margin: 20px
 }
 
 .lower-box {
-    border: 3px solid yellow;
+    border: 1px solid teal;
+    background-color: lightgray;
     display: grid;
     grid-template-columns: 70% 30%;
+    margin: 20px;
 }
 
 .weather-box {
     align-items: center;
-    border: 3px solid fuchsia;
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-.previous-searches-list {
-    border: 3px solid darkcyan;
+    margin: 20px
 }
