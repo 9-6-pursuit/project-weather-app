@@ -59,7 +59,7 @@ li {
 
 .weather-box {
     align-items: center;
-    background-color: rgb(170, 190, 245);
+    /* background-color: rgb(170, 190, 245); */
     background-color: gainsboro;
     display: flex;
     flex-direction: column;
@@ -69,6 +69,6 @@ li {
 
 .weather-box-item {
     margin-bottom: 10px;
-} 
+}
 
 
