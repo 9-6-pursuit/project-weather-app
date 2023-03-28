@@ -1,5 +1,7 @@
 const form  = document.querySelector("form")
 const BASE_URL = "https://wttr.in/"
+const body = document.querySelector("body")
+
 
 form.addEventListener("submit", (event)=>{
     event.preventDefault();
@@ -14,14 +16,10 @@ form.addEventListener("submit", (event)=>{
     }).catch(displayError);
 })
 
-  
-let body = document.querySelector("body")
 
 function displayCard(json){
+    
     console.log(json)
-    // let areaObj = {json}
-    // console.log({json})
-        // if (!areaObj){
         let areaName = json.nearest_area[0].areaName[0].value
         let regionName = json.nearest_area[0].region[0].value
         let countryName = json.nearest_area[0].country[0].value
@@ -31,15 +29,18 @@ function displayCard(json){
         let rainName = json.weather[0].hourly[0].chanceofrain
         let snowName = json.weather[0].hourly[0].chanceofsnow
         
-        //Giph if else
-        
-        // area name, giph, area, region, country, currently, chance of sunshine
+        // Body targeting
+        let pageContainerSection = document.querySelector(".page-container")
+
         let divWeatherBox = document.querySelector(".weather-box")
         let title = document.querySelector(".title")
         title.textContent = areaName
         
         let weatherReport = document.createElement("ul")
         weatherReport.setAttribute("class", "weather-list")
+
+        
+        // area name, giph, area, region, country, currently, chance of sunshine
 
         let locationItem = document.createElement("li")
         locationItem.textContent = `Area: ${areaName}`
@@ -81,33 +82,41 @@ function displayCard(json){
                 divWeatherBox.prepend(weatherImg)
             }
 
-    // }else {
-    //     areaName = json.nearest_area[0].areaName[0].value
-    //     // area name, giph, area, region, country, currently, chance of sunshine
-    //     let divWeatherBox = document.querySelector(".weather-box")
-    //     let title = document.querySelector(".title")
-    //     title.textContent = areaName
+    // created foot section for 3 day forecast
+        let footer = document.createElement("footer")
+        pageContainerSection.append(footer)
         
-    //     let weatherReport = document.createElement("ul")
-    //     weatherReport.setAttribute("class", "weather-list")
+        let foot1 = document.createElement("div")
+        footer.append(foot1)
+        foot1.setAttribute("class", "1days-forecast")
+        let header1 = document.createElement("h1")
+        foot1.append(header1)
+        
+        let foot2 = document.createElement("div")
+        footer.append(foot2)
+        foot2.setAttribute("class", "2days-forecast")
+        let header2 = document.createElement("h1")
+        foot2.append(header2)
+        
+        let foot3 = document.createElement("div")
+        footer.append(foot3)
+        foot3.setAttribute("class", "3days-forecast");        let header3 = document.createElement("h1")
+        foot3.append(header3)
+    // 
+        
 
-    //     let locationItem = document.createElement("li")
-    //     locationItem.textContent = `Area : ${areaName}`
+    }
 
-    //     let regionItem = document.createElement("li")
-    //     regionItem.textContent = `Region : ${0}`
-        
-    //     let countryItem = document.createElement("li")
-    //     countryItem.textContent = `Country : ${0}`
-        
-    //     let currentlyItem = document.createElement("li")
-    //     currentlyItem.textContent = `Currently : ${0}`
-        
-    //     let chanceItem = document.createElement("li")
-    //     chanceItem.textContent = `Chance Of Sunshine : ${0}`
-    // }
 
-}
+
+
+
+
+
+
+
+
+
 // --------------------------------------
 function displayError(error) {
     console.log(error)

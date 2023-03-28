@@ -4,7 +4,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 10px;
-  display: flexbox;
   flex-direction: row;
 }
 
@@ -114,6 +113,12 @@ button:hover {
 }
 
 
+footer{
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  border: 1px dotted yellow;
+}
 
  /* .card {
   border: 3px solid #4f7d5d;
