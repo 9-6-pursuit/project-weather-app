@@ -19,7 +19,10 @@
     "aside main previous"
     "today tommorrow day";
 }
-
+.h4{
+    display: flex;
+flex-direction: column;
+}
 .header{
     border: ridge green;
     grid-area: header;
@@ -28,13 +31,13 @@
 }
 
 .main {
-
+    border: ridge green;
     grid-area: main;
     text-align: center;
 }
 
 .previous {
-   
+  
     grid-area: previous;
 }
 
@@ -44,29 +47,27 @@
     text-align: center;
 
 }
-/* .previous{
-    background-color:rgb(112, 168, 228);
-} */
+.previous{
+    display: flex;
+    flex-direction: column;
+}
 
 .today{
-  
-    background-color: rgb(194, 117, 233);
+    border: ridge green;
     text-align: center;
     grid-area: today;
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto auto;
 }
 .tommorrow {
-   
-    background-color: rgb(203, 54, 226);
+    border: ridge green;
     text-align: center;
     grid-area: tommorrow;
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto auto;
 }
 .day {
-   
-    background-color: rgb(210, 70, 189);
+    border: ridge green;
     text-align: center;
     grid-area: day;
     grid-template-columns: auto auto auto;

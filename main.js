@@ -36,14 +36,11 @@ document.querySelector("form").addEventListener("submit", (event) => {
       ul[6].after(weather.weather[0].hourly[0].chanceofsnow);
       ul[6].textContent = `Chance Of Snow: `;
 
-
-      pre = weather.nearest_area[0].areaName[0].value
-      feels = weather.current_condition[0].FeelsLikeF
-      del.append(`${weather.nearest_area[0].areaName[0].value} - ${weather.current_condition[0].FeelsLikeF}°F `)
+      let previousSearch = document.createElement("li")
+      previousSearch.textContent = `${weather.nearest_area[0].areaName[0].value} - ${weather.current_condition[0].FeelsLikeF}°F `
+      del.append(previousSearch)
       select.remove()
     
-      
-
       const h3today = document.createElement("h3");
       h3today.textContent = "Today";
 
@@ -65,6 +62,7 @@ document.querySelector("form").addEventListener("submit", (event) => {
       const minTemp = weather.weather[0].mintempF;
       paragraphtoday.append(strong03, minTemp);
       today.append(h3today, paragraphtoday);
+
 
       const h3tommorrow = document.createElement("h3");
       h3tommorrow.textContent = "Tommorrow";
@@ -110,9 +108,7 @@ document.querySelector("form").addEventListener("submit", (event) => {
       paragraphday.append(strong09, minTemp2);
       day.append(h3day, paragraphday);
 
-      const destroy = furture => {
-        document.getElementById(furture).innerHTML = '';
-      };
+      aside.furture.innerHTML= ""
       
     });
 });
@@ -132,6 +128,6 @@ conversion.addEventListener("submit", (event) => {
   }
    document.querySelector(".main").appendChild(image);
 
-
+conversion.innerHTML = ""
 });
 
