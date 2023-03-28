@@ -17,6 +17,7 @@ function fetchWeatherData(cityName) {
     //     .then(json => fillWeatherBox(json, cityName))
     //     .catch(error => console.error(error))
 
+
 }
 
 
@@ -64,14 +65,17 @@ const fillWeatherBox = (json, cityName) => {
     temperature.innerHTML = `<strong>Currently:</strong> Feels like ${temperatureValue}°F`
     weatherBox.append(temperature)
 
-    
-    
+// This to get the average, max and min temperature for the days
+
+    for (let i = 0; i < json.weather.length; i++) {
+        const maxTempF = json.weather[i].maxtempF;
+        const minTempF = json.weather[i].mintempF;
+        const avgTempF = json.weather[i].avgtempF;
+        fillDaysBox(avgTempF, maxTempF, minTempF) 
+    }
     
 
 
-    
-    
-    
     fillPreviousSearchBox(areaName, temperatureValue)
 }
 
@@ -130,17 +134,6 @@ conversionForm.addEventListener("submit", event =>{
 
 })
 
-function fillTodayBox(){
-    const todayBox = document.querySelector(".today")
-    let list = document.createElement("li")
-    list.innerHTML = "Average Temperature"
-    
-    todayBox.append(list)
-}
-
-
-fillTodayBox()
-
 
 // This function is to append the proper icon to weather box
 function fillImage(weatherDesc){
@@ -166,4 +159,22 @@ function fillImage(weatherDesc){
         image.src = "assets/icons8-summer.gif" 
     }
     weatherBox.append(image)
+}
+
+
+function fillDaysBox(avgTempF, maxTempF, minTempF) {
+    let days = [
+        document.querySelector(".today"),
+        document.querySelector(".tomorrow"),
+        document.querySelector(".day-after")
+    ];
+    days.forEach(day => {
+        const title = day.querySelector("h4")
+        let list = document.createElement("li")
+        list.innerHTML = `<li><strong>Average Temperature: </strong>${avgTempF}°F</li>
+                          <li><strong>Max Temperature: </strong>${maxTempF ? maxTempF + '°F' : 'N/A'}</li>
+                          <li><strong>Min Temperature: </strong>${minTempF ? minTempF + '°F' : 'N/A'}</li>`;
+        day.innerHTML = ''
+        day.append(title, list)
+    });
 }

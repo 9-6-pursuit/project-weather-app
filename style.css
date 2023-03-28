@@ -3,9 +3,10 @@ body{
     flex-direction: column;
     justify-items: center;
     align-items: center;
-    background-image: url(https://img.freepik.com/premium-vector/cloud-blue-sky-background_34645-864.jpg);
+    background-image: url(assets/background.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
+    border: 1px solid black;
 }
 
 main{
@@ -21,6 +22,7 @@ main{
     justify-content: center;
     list-style-type: none;
     border-bottom: 10px;
+    
 }
 
 
@@ -31,7 +33,8 @@ main{
     flex-direction: column;
     align-items: center; 
     justify-content: center;
-    /* background-color: khaki; */
+    border: 1px solid black;
+
     
 }
 
@@ -45,11 +48,6 @@ main{
     display: flex;
 }
 
-/* .output-box{
-    display: flex;
-    flex-wrap: wrap;
-} */
-
 .output-box{
     margin: 3px;
     display: grid;
@@ -58,11 +56,13 @@ main{
     
 } 
 .conversion{
-    margin: 3px;
+    /* margin: 3px; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border: 1px solid black;
+
 
 }
 
@@ -72,12 +72,18 @@ main{
 }
 
 .current-search{
-    margin: 3px;
-    /* background-color: antiquewhite; */
+    /* margin: 3px; */
+    margin: 0px 3px;
+    border: 1px solid black;
     display: flex;
     flex-direction: column;
     align-self: center;
     align-items: center;
+}
+.previous-search {
+    /* margin: 3px; */
+    border: 1px solid black;
+
 }
 
 .previous-search li{
@@ -85,6 +91,7 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 
 }
 
@@ -112,9 +119,10 @@ h4{
     padding: 15px;
     display: flex;
     flex-direction: column;
-    border: 2px solid black;
+    border: 1px solid black;
     width: 250px;
     align-items: center;
     justify-content: start;
+    list-style: none;
 }
 
