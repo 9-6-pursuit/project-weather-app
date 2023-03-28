@@ -1,11 +1,19 @@
+body{
+    display: grid;
+    grid-template-columns: 1fr 1fr 40% 1fr 1fr;
+    gap: 10px;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 header{
     background-color: rgb(7, 111, 111);
-    width: 60%;
+    width: 70%;
     margin: 10px auto;
     border: 3px solid black;
     font-family: "Archivo Black", serif;
     padding: 30px 0px ;
+    grid-column: 1/6;
 }
 
 h1{
@@ -22,8 +30,43 @@ h1{
 }
 
 .button{
-    border-radius: 5px;
+    height: fit-content;
+    border-radius: 6px;
     border: 0cm;
-    padding: 3px;
     margin: 5px;
+    padding: 4px 12px;
+    background-color: cornsilk;
+}
+
+main{
+    border: 1.5px solid rgb(7, 111, 111);
+    height: fit-content;
+    padding: 20px 10px;
+    grid-column: 3;
+    text-align: center;
+}
+.widget-temperature{
+    grid-column: 2;
+}
+
+input{
+    height: 20px;
+    font-size: 14px;
+
+}
+
+.temps{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 70% auto;
+}
+.tempName{
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+#result{
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
 }

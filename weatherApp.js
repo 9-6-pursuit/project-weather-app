@@ -1,5 +1,7 @@
- //entrar a la url de la api y nos va a devolver lo que sea que encuentre
- formLocation.addEventListener("submit", (event) => {
+ 
+ let formLocation = document.getElementById("form-location")
+
+formLocation.addEventListener("submit", (event) => {
     event.preventDefault()
     let noPrevious=document.getElementById("m2")
     if(noPrevious) noPrevious.remove();
