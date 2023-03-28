@@ -1,0 +1,72 @@
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: helvetica;
+}
+
+h1 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+
+
+li{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    list-style: none;
+}
+
+.page-container {
+    border: solid blue;
+    width: 65%;
+}
+
+
+.upper-box {
+    border: solid black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: teal;
+}
+
+.upper-box-items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 50px;
+    color: white;
+}
+
+.upper-box > button {
+    padding-left: 100px;
+}
+
+.weather-box {
+    border: 1px solid black;
+    padding: 40px 60px 30px 40px; 
+    margin: 0px 227px 0px 0px;
+}
+
+.previous-search-box {
+    display: flex;
+    flex-direction: column;
+    border: solid black 10px;
+    margin: 0px 0px 0px 65%;
+}
+
+.lower-box {
+    border: solid; 
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.days-box {
+    display: flex;
+}
