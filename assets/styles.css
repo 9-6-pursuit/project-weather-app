@@ -32,23 +32,28 @@ body{
 
 .search-results{
   display: grid;
-  grid-template-columns: 25% 50% 25%;
-  width: 90%;
+  grid-template-columns: 23% 54% 22%;
+  width: 100%;
 }
 #city-results{
   border: 3px solid rgb(11, 230, 121);
   background-color: rgb(238, 227, 227);
   border-radius: 8px;
-  color:rgb(45, 39, 42);
+  color:rgb(45,+
+  
+  
+   39, 42);
   display: flex;
   flex-direction: column;
   line-height: 30px;
   margin: 5%;
   min-height: 50px;
-  padding:5%;
+  /* padding:5%; */
   text-align: center;
 }
-
+.ml-35{
+  margin-Left: -35px;
+}
 .hide{
   display: none;
 }
@@ -68,6 +73,10 @@ body{
   grid-template-columns: 30% 30% 30%;
   width: 80%;
 }
+.font12{
+  font-size: 12px;
+}
+
 input{
   margin-bottom: 20px;
 }
