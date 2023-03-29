@@ -1,7 +1,7 @@
 body {
   display: flex;
   flex-direction: column;
-  font-family: monospace;
+  font-family: Helvetica, Arial, sans-serif;
   background-color: antiquewhite;
 }
 
