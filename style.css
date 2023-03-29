@@ -48,3 +48,13 @@ ul {
   color: red;
   background-color: white;
 }
+
+#weather-location-headline {
+    font-size: 1.5em;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+#weather-display-list li {
+    padding-bottom: 10px;
+}

@@ -29,7 +29,6 @@ searchForm.addEventListener("submit", (event) => {
     .then((json) => {
       fillWeatherDisplay(json, searchText);
       fillHistoryDisplay(searchText);
-      console.log(json);
     });
 });
 
