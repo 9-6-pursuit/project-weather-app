@@ -33,6 +33,7 @@ p {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .upper-box-item {
@@ -75,7 +76,6 @@ p {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    padding: 10px 20px 10px 0px;
 }
 
 .bottom ul {
@@ -83,6 +83,9 @@ p {
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    margin: 5px;
+    padding: 5px;
+    background-color: #bbbbbb;
 }
 
 .bottom-header {
@@ -90,6 +93,6 @@ p {
 }
 
 .bottom-text {
-    font-size: 15px;
+    font-size: 14px;
     padding: 8px;
 }

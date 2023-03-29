@@ -24,7 +24,7 @@ input.addEventListener("keypress", event => {
 function showWeather(json) {
     let weatherBox = document.querySelector(".weather-box");
     let searchList = document.querySelector(".search-list");
-    let history = `${json.nearest_area[0].areaName[0].value} (${json.current_condition[0].FeelsLikeF}°F)`
+    let history = `${json.nearest_area[0].areaName[0].value} (${json.current_condition[0].FeelsLikeF}°F)`;
 
     if (!clickCount) {
         document.getElementById("empty").remove();
@@ -83,7 +83,6 @@ function showWeather(json) {
         minTemp.innerHTML = `<strong>Min Temperature:</strong> ${json.weather[i].mintempF}°F`;
         theDay.append(header, avgTemp, maxTemp, minTemp);
     }
-    document.querySelector(".bottom").style["background-color"] = "#bbbbbb";
 }
 
 function showError(error) {
