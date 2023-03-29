@@ -5,43 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script defer src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <script defer src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <div class="page-container">
-        <div class="upper-box">
-            <h1 class="title">Weather App</h1>
-            <form>
-                <ul class="upper-box-items">
-                    <li class="upper-box-item">Pick a Location</li>
-                    <input type="text" placeholder="enter a location" required />
-                    <button class="upper-box-item">Get Weather</button>
-                </ul>
-            </form>
-        </div>
-        <div class="mid-box">
-            <div class="weather-box">Choose a location to view the weather.</div>
+    <header>
+        <h1 class="title">Weather App</h1>
+        <form>
+            <ul class="weather-search-box">
+                <li class="search-area"">Pick a Location</li>
+                <input type="text" id="city-name-input" placeholder="enter a location" />
+                <button class="search-area" id="search-button">Get Weather</button>
+            </ul>
+        </form>
+    </header>
+    <div class="mid-box">
+        <div class="weather-box" id="weather-box">Choose a location to view the weather.</div>
+        <div>
             <ul class="previous-searches">
                 <h3>Previous Searches</h3>
-                <li>No previous searches.</li>
+                <li class="no-searches">No previous searches.</li>
             </ul>
         </div>
-        <div class="lower-box-outer">
-            <legend><strong>Temperature Converter</strong></legend>
-            <form>
-                <input type="text" class="text-box" required />
-                    <div class="lower-box-inner">
-                        <input type="radio" id="fahrenheit" name="scale" value="fahrenheit" />
-                        <label for="fahrenheit">°F</label>
-                    </div>
-                    <div class="lower-box-inner">
-                        <input type="radio" id="celsius" name="scale" value="celsius />
-                        <label for="celsius"> °C</label>
-                    </div>
-                <button>Submit</button>
-            </form>
-        </div>
+    </div>
+    <div class="lower-box-outer">
+        <legend><strong>Temperature Converter</strong></legend>
+        <form>
+            <input type="text" class="text-box" required />
+            <div class="lower-box-inner">
+                <input type="radio" id="fahrenheit" name="scale" value="fahrenheit" />
+                <label for="fahrenheit">°F</label>
+            </div>
+            <div class="lower-box-inner">
+                <input type="radio" id="celsius" name="scale" value="celsius />
+                <label for="celsius"> °C</label>
+            </div>
+            <button>Submit</button>
+        </form>
+    </div>
     </div>
 </body>
 </html>
