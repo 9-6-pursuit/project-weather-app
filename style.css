@@ -2,11 +2,7 @@
 
 body {
     display: flex
-    flex-direction: column;
-    justify-items: center;
-    align-items: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+   
 }
 
 
@@ -29,14 +25,16 @@ header form {
     color: antiquewhite;
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
+    align-items: center;
 }
 main{
+    text-align: center;
     align-items: center;
     font-family: 'Times New Roman', Times, serif;
+    grid-column: 2/5;
+    width: 100%;
+    background-color: white
     
-        grid-column: 2/5;
-        width: 100%;
-        background-color: white
         
       
 }
@@ -76,26 +74,10 @@ h3{
 }
 
 
-.search-input {
+.search{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    list-style-type: none;
-    border-bottom: 10px;
-    
-}
-
-
-.search-box {
-    height: 150px;
-    width: 800px;
-    display: flex;
-    flex-direction: column;
     align-items: center; 
-    justify-content: center;
-    border: 1px solid black;
-
-    
+    justify-content: center;   
 }
 
 .search li, button{
