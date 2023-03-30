@@ -20,16 +20,32 @@
             </ul>
         </form>
     </header>
-    <div class="mid-box">
-        <div class="weather-box" id="weather-box">Choose a location to view the weather.</div>
-        <div>
-            <ul class="previous-searches">
-                <h3>Previous Searches</h3>
-                <li class="no-searches">No previous searches.</li>
-            </ul>
-        </div>
+    <div class="mid-section">
+        <!-- temperature conversion widget -->
+        <aside class="left">
+            <p>converter</p>
+        </aside>
+        <main class="center">
+            <!-- Contains current weather -->
+            <article class="weather-box" id="weather-box">Choose a location to view the weather.</article>
+            <!-- contains weather for today, tomorrow, and day after -->
+            <aside class="three-days">
+                <article class="today">Today</article>
+                <article class="tomorrow">Tomorrow</article>
+                <article class="day-after">Day After Tomorrow</article>
+            </aside>
+        </main>
+        <!-- contains weather history -->
+        <aside class="right">
+            <section>
+                <h4>Previous Searches</h4>
+                <p class="no-searches" id="no-searches">No previous searches.</p>
+                <ul class="previous-searches" id="previous-searches">
+                </ul>
+            </section>
+        </aside>
     </div>
-    <div class="lower-box-outer">
+    <!-- <div class="lower-box-outer">
         <legend><strong>Temperature Converter</strong></legend>
         <form>
             <input type="text" class="text-box" required />
@@ -43,7 +59,7 @@
             </div>
             <button>Submit</button>
         </form>
-    </div>
+    </div> -->
     </div>
 </body>
 </html>

@@ -1,33 +1,29 @@
-body {
+body{
     align-items: center;
-    padding-top: 2%;
     display: flex;
     flex-direction: column;
     font-family: sans-serif;
     background-image: url(https://static.vecteezy.com/system/resources/previews/006/174/573/original/beautiful-blue-sky-background-free-vector.jpg);
-}
-
-li {
-    list-style: none;
+    margin-top: 2%;
 }
 
 .page-container {
-    /* border: 3px solid blue; */
+    border: 3px solid blue;
     width: 80%;
 }
 
 header {
-    align-items: center;
     border: 3px solid rgb(222, 106, 64);
     display: flex;
     flex-direction: column;
+    align-items: center;
     background-color: rgb(245, 146, 110, .75);
     border-radius: 15px;
-    
+
 }
 
 .title {
-    font-family: 'imapact', fantasy;
+    font-family: fantasy;
     font-size: 50px;
 }
 
@@ -37,53 +33,68 @@ header {
     flex-direction: row;
 }
 
+li {
+    list-style: none;
+}
+
 .search-area {
     margin: 8px;
 }
 
-.mid-box {
+.mid-section {
     /* border: 3px solid yellow; */
     display: grid;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 30% 40% 30%;
     margin: 20px;
-    border: 1px solid black;
-    background-color: rgb(152, 150, 150, 0.75);
 }
 
-.weather-box {
-    align-items: center;
-    /* border: 3px solid rgb(196, 139, 32); */
+.left {
+    /* border: 3px solid rgb(165, 244, 165); */
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    /* background-color: rgba(152, 150, 150, 0.75); */
 }
 
-.previous-searches {
-    /* border: 3px solid rgb(196, 139, 32); */
-    /* background-color: rgb(255, 255, 255, .6); */
-    /* margin: 20px; */
+/* .center {
+    
+    
+} */
+
+.weather-box {
+    border: 2px solid rgb(6, 209, 188);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgb(152, 150, 150, .75);
 }
 
-.lower-box-outer {
-/* border: 3px solid green; */
-display: flex;
-flex-direction: column;
-align-items: center;
-/* background-color: rgb(255, 255, 255, .45); */
-padding-top: 3%; 
-padding-bottom: 3%;
+.three-days {
+    border: 1px solid rgb(6, 209, 188);
+    background: rgb(152, 150, 150, .75);
+    margin-top: 5px;
+    display: grid;
+    grid-template-columns: 33.333% 33.333% 33.333%;
 }
 
-.text-box {
-    padding-left: 3% ;
+.today {
+    border: 1px solid rgb(6, 209, 188);
 }
 
-button {
-    border-radius: 5px;
-    border: 2px solid grey;
+.tomorrow {
+    border: 1px solid rgb(6, 209, 188);
 }
 
-.weather-box-item {
-    margin-bottom: 10px;
+.day-after {
+    border: 1px solid rgb(6, 209, 188);
 }
+
+.right {
+    /* border: 3px solid skyblue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+}
+
