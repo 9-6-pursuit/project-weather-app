@@ -1,0 +1,114 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Project</title>
+    <script src="WeatherScript.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="page-container">
+            <div class="upper-box">
+                <h1>Weather App</h1>
+                 <form id="search-form" class="upper-box-item" action="">
+                     <label class="upper-box-item">Pick a location</label> 
+                     <input  id="search-term" class="upper-box-item" type="text" placeholder="Enter a city or area..." name="search-term"autofocus/>
+                     <button class="upper-box-item" id="search-button" type="submit">Get Weather Info</button>
+                 </form> 
+                 
+            </div>
+            <div class="lower-box">
+                <div class="weather-box">Choose a location to view weather.</div>
+                <section class="search-history">
+                    <h5 class="search-history">Previous Searches</h5>
+                        <li class="search-history-links"> No previous searches</li>
+                </section>
+            </div>
+        </div>
+    </header>
+    <aside>
+        <h4>Temperature Converter</h4>
+            <div id="converter">
+                <label for="degrees">Degrees</label>
+                     <input type="number" id="degrees">
+                <label for="type">Type</label>
+                <select id="type">
+                    <option value="fahrenheit">Fahrenheit</option>
+                    <option value="celsius">Celsius</option>
+                    <option value="kelvin">Kelvin</option>
+                </select>
+                <button id="convert" onclick="convert()">Convert</button>
+                <label id="resultlabel">Result:</label>
+                <h2 id="result"></h2>
+            </div>
+    </aside>
+    <main>
+        <article id="current-weather">
+            <H4>Current Weather</H4>
+                <ul>
+                    <figure>
+                        <img src="assets/icons8-summer.gif" alt="sunny">
+                    </figure> 
+                <div>
+                    <h2>86 <sup>°</sup>F</h2>
+                    <p class="current-conditions">Sunny</p>
+                    <h3><span class="city-name">Newport News, Virginia</span></h3>
+                </div>
+               </ul>
+        </article>
+        <aside id="upcoming-weather">
+            <h4>Weather For The Next 3 Days</h4>
+            <article class="upcoming-weather">
+                <ul class="following-days">
+                       <figure>
+                            <img src="assets/icons8-summer.gif" alt="sunny">
+                       </figure> 
+
+                       <div>
+                            <h2>86 <sup>°</sup>F</h2>
+                            <p class="conditions">Sunny</p>
+                            <h3><span class="city-name">Newport News, Virginia</span></h3>
+                        </div>
+                </ul>
+            </article>
+            <article class="upcoming-weather">
+                <ul class="following-days">
+                        <figure>
+                            <img src="assets/icons8-summer.gif" alt="sunny">
+                       </figure> 
+
+                       <div>
+                            <h2>86 <sup>°</sup>F</h2>
+                            <p class="conditions">Sunny</p>
+                            <h3><span class="city-name">Newport News, Virginia</span></h3>
+                        </div>
+                </ul>
+            </article>
+            <article class="upcoming-weather">
+                <ul class="following-days">
+                        <figure>
+                            <img src="assets/icons8-summer.gif" alt="sunny">
+                       </figure> 
+
+                       <div>
+                            <h2>86 <sup>°</sup>F</h2>
+                            <p class="conditions">Sunny</p>
+                            <h3><span class="city-name">Newport News, Virginia</span></h3>
+                       </div>
+                </ul>
+            </article>
+        </aside>
+    </main>
+    <!-- <aside id="weather-history">
+        <section></section>
+        <h5 class="search-history">Previous Searches</h5>
+    </aside>
+        <sidebar>
+            <ul class="search-history"></ul>
+            <a href=""></a>
+            <p>No searches have been made yet.</p>
+        </sidebar> -->
+</body>
+</html>
