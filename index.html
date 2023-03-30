@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="main.js"></script>
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="page-container">
+      <header>
+        <h1>Weather App</h1>
+        <form id="weather-input">
+          <label
+            >Pick a Location
+            <input id="location" name="location" type="text" placeholder="Enter a city or area..."/>
+          </label>
+          <button id="location-submit" name="location-submit" type="submit">
+            Submit Weather
+          </button>
+          <p id="warning"></p>
+        </form>
+      </header>
+      <main>
+        <aside id="conversion-widget">Temperature Converter</aside>
+        <article id="weather-display">
+          <h3 id="weather-location-headline">
+            Enter a location to view the weather.
+          </h3>
+          <ul id="weather-display-list"></ul>
+        </article>
+        <aside id="weather-history">
+          Previous Searches
+          <ul id="weather-history-list"></ul>
+        </aside>
+      </main>
+    </div>
+  </body>
+</html>
