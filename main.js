@@ -15,21 +15,22 @@ searchForm.addEventListener("submit", (event) => {
 
   let searchText = document.getElementById("location").value; // what the user inputs
   document.getElementById("location").value = ""; // clearing the search box
-  if (!searchText) {
+  if (searchText) {
+    let baseURL = `https://wttr.in/` + searchText + `?format=j1`; // forming a proper URL
+
+    fetch(baseURL)
+      .then((response) => {
+        return response.json();
+      })
+      .then((json) => {
+        fillWeatherDisplay(json, searchText);
+        fillHistoryDisplay(searchText);
+      });
+  } else {
     // if there's no search text submitted, add a warning line
     warningLine.innerText = "Enter some text. This field cannot be left blank.";
     warned = true;
   }
-  let baseURL = `https://wttr.in/` + searchText + `?format=j1`; // forming a proper URL
-
-  fetch(baseURL)
-    .then((response) => {
-      return response.json();
-    })
-    .then((json) => {
-      fillWeatherDisplay(json, searchText);
-      fillHistoryDisplay(searchText);
-    });
 });
 
 const fillWeatherDisplay = (json, searchText) => {
