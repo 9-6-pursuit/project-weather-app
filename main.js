@@ -33,7 +33,6 @@ function showWeather(json) {
         boxItems.forEach(item => item.remove());
     }
 
-    let weatherBox = document.querySelector(".weather-box");
     let header = document.createElement("h2");
     header.className = "weather-box-item";
     header.textContent = cityName;
@@ -70,7 +69,24 @@ function showWeather(json) {
     snow.className = "weather-box-item";
     snow.innerHTML = `<strong>Chance of Snow:</strong> ${json.weather[0].hourly[0].chanceofsnow}`;
     
+    let weatherBox = document.querySelector(".weather-box");
     weatherBox.prepend(header, area, region, country, currently, feelsLike, sunshine, rain, snow);
+
+    let img = document.createElement("img");
+    img.className = "weather-box-item";
+    if (json.weather[0].hourly[0].chanceofsunshine > 50) {
+        img.src = "./assets/icons8-summer.gif";
+        img.alt = "sun";
+    }
+    else if (json.weather[0].hourly[0].chanceofrain > 50) {
+        img.src = "./assets/icons8-torrential-rain.gif";
+        img.alt = "rain";
+    }
+    else if (json.weather[0].hourly[0].chanceofsnow > 50) {
+        img.src = "./assets/icons8-light-snow.gif";
+        img.alt = "snow";
+    }
+    weatherBox.prepend(img);
 
     let days = ["Today", "Tomorrow", "Day After Tomorrow"];
     for (let i = 0; i < 3; i++) {
