@@ -5,18 +5,24 @@ let cityNameInput = document.getElementById("city-input")
 
 // This function is for Getting the data after receiving the city name as an argument 
 function fetchWeatherData(cityName) {
-    let receivedPromise = fetch(`https://wttr.in/${cityName}?format=j1`)
-    receivedPromise.then(response => {
-        return response.json()
-    }).then(json => {
-        fillWeatherBox(json, cityName)
-    }).catch(error => console.error(error))
-
-     // fetch(`https://wttr.in/${cityName}?format=j1`)
-    //     .then(response => response.json())
-    //     .then(json => fillWeatherBox(json, cityName))
-    //     .catch(error => console.error(error))
-
+    
+    fetch(`https://wttr.in/${cityName}?format=j1`)
+    .then(response => response.json())
+    .then(json => fillWeatherBox(json, cityName))
+    .catch(error => {
+        console.error(error)
+        alert("An error occurred while fetching")
+    })
+    
+    // let receivedPromise = fetch(`https://wttr.in/${cityName}?format=j1`)
+    // receivedPromise.then(response => {
+    //     return response.json()
+    // }).then(json => {
+    //     fillWeatherBox(json, cityName)
+    // }).catch(error => {
+    //     console.error(error)
+    //     alert("An error occurred while fetching")
+    // })
 
 }
 
@@ -92,16 +98,20 @@ const fillPreviousSearchBox = (areaName, temperatureValue) => {
         previousSearchArr.pop();
       }
     previousSearchArr.forEach(search => {
-        let list = document.createElement("li")
-        list.style.color = "blue"
-        list.style.textDecoration = "underline"
-        // list.style.textDecoration("underline")
-        list.innerHTML = `<li>${search.areaName}- ${search.temperatureValue}°F</li>`
-        
+        let list = document.createElement("p")
+        let link = document.createElement("a")
+        link.href = "#"
+        link.innerText = `${search.areaName}`
+        let temp = document.createElement("span")
+        temp.innerText = ` - ${search.temperatureValue}°F`
+        temp.style.display = "inline"
+        list.append(link)
+        list.append(temp)
+
         // add event listener to make the previous search clickable and pass the clicked city 
-        list.addEventListener("click", (event) => {
-            const liElement = list.querySelector("li")
-            const searchedArea = liElement.textContent.split('-')[0]
+        link.addEventListener("click", (event) => {
+            const searchedArea = link.innerText
+            // const searchedArea = liElement.textContent.split('-')[0]
             console.log(searchedArea)
 
             //calling fetch weather function when city name on previous search box clicked
