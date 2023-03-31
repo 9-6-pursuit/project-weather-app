@@ -1,0 +1,128 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    background-image: url(assets/background.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid black;
+}
+
+main{
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    border-bottom: 10px;
+    
+}
+
+
+.search-box {
+    height: 150px;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    border: 1px solid black;
+
+    
+}
+
+.search-input li, button{
+    margin: 5px;
+}
+
+
+
+.search-input{
+    display: flex;
+}
+
+.output-box{
+    margin: 3px;
+    display: grid;
+    width: 800px;
+    grid-template-columns: 25% 50% 25%;
+    
+} 
+.conversion{
+    /* margin: 3px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+
+
+}
+
+.conversion li{
+    list-style: none;
+    padding: 3px;
+}
+
+.current-search{
+    /* margin: 3px; */
+    margin: 0px 3px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+}
+.previous-search {
+    /* margin: 3px; */
+    border: 1px solid black;
+
+}
+
+.previous-search li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+
+h4{
+    padding-left: 20px;
+
+}
+
+.weather-info-list{
+    padding-bottom: 15px;
+}
+
+  
+.next-days{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    justify-content: space-evenly;
+    width: 800px;
+}
+
+.today, .tomorrow, .day-after {
+    margin: 1px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 250px;
+    align-items: center;
+    justify-content: start;
+    list-style: none;
+}
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather-App</title>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <main>
+        <header class="search-box">
+            <h1>Weather App</h1>
+            <form class="search-input">
+                <label for="city-input">Pick a Location:</label>
+                <input type="text" id="city-input" name="city-input" placeholder="City Name">
+                <button class="button" id="search-button">Get Weather</button>
+            </form>
+        </header>
+
+        <section class="output-box">
+            <div class="conversion">
+                <form class="conversion-form">
+                    <li>
+                        <label for="temperature">Convert the temperature:</label>
+                        <input type="number" name="temperature" id="temperature">
+                    <li>
+                    <li>
+                        <label for="to-c">To Celsius</label>
+                        <input type="radio" id="to-c" name="convert-temp" value="c">
+                    </li>
+                    <li>
+                        <label for="to-f">To Fahrenheit</label>
+                        <input type="radio" id="to-f" name="convert-temp" value="f">
+                    </li>
+                    <li>
+                        <button>Submit</button>
+                    </li>
+                    <li>
+                        <h4 class="result">0.00</h4>
+                    </li>
+                </form>
+
+            </div>
+
+            <div class="current-search" id="weather-data">
+                <ul>
+                    <li>Choose a location to view the weather</li>
+                </ul>
+            </div>
+            <div class="previous-search">
+                <h4>Previous Searches</h4>
+                <ul>
+                    <li>No previous searches</li>
+                </ul>
+            </div>
+            <aside>
+
+            </aside>
+        </section>
+
+        <section class="next-days">
+            <div class="today">
+                <h4>Today</h4>
+
+            </div>
+            <div class="tomorrow">
+                <h4>Tomorrow</h4>
+
+            </div>
+            <div class="day-after">
+                <h4>Day After Tomorrow</h4>
+            </div>
+        </section>
+    </main>   
+</body>
+</html>
