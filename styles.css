@@ -1,31 +1,61 @@
 body {
     display: flex;
     flex-direction: column;
-    align-items: center;;
+    align-items: center;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 40px;
 }
 
 .page-container {
-    border: 3px solid pink;
     text-align: center;
-    padding: 12px;
+    padding: 60px;
 }
 
 .upper-box {
     align-items: center;
-    border: 3px solid rgb(48, 201, 122);
     display: flex;
     flex-direction: column;
-    padding: 8px;
+    padding: 50px;
+    border-radius: 6px;
+}
+
+.upper-box-item label {
+    font-weight: 800;
+    padding: 0px;
+    font-size: 20;
+    color: rgb(0, 0, 0);
+}
+
+#search-term {
+    font-size: 15px;
+    
+    
+}
+
+#search-button {
+  background-color: #ede5e5;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 2px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 3px;
+
 }
 
 .lower-box {
-    border: 3px solid orange;
     display: grid;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 60% 40%;
 }
 
 .weather-box {
-    border: 3px solid blueviolet;
+    font-weight: 800;
 }
 
 .weather-box-item {
@@ -34,8 +64,7 @@ body {
 
 .search-history {
     align-items: center;
-    border: 3px solid brown;
-    padding: 8px;
+    padding: 10px;
     padding-top: 0px;
 }
 
@@ -49,18 +78,41 @@ li {
     list-style: none;
 }
 
+
+.converter {
+    display: block;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 16px;
+    text-align: center;
+}
+
+#result {
+    font-size: small;
+}
+
 .img {
-    size: 20%;
+    width: auto;
 }
 
 .curr-weather {
-    size: 20%;
+    width: auto;
 }
 
-main {
+/* main {
     display: flex;
     flex-direction:row;
     align-items: center;
     flex-wrap: nowrap;
-    justify-content: center;
-} 
+    justify-content: space-evenly;
+}  */
+
+article {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    
+}
+
+
+

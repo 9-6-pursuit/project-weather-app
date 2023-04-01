@@ -16,11 +16,14 @@ const followingTemp = document.querySelectorAll(".following-temp");
 const locationHeading = document.querySelectorAll(".location");
 const headingDate = document.querySelectorAll(".heading-date");
 const conditions = document.querySelectorAll(".conditions"); 
+const buggyImg = document.querySelector(".curr-weather");
 
 //this fxn will capitalize the first letter in each word of the city or town
 const capitalizeCityName = (cityName) => {
     return cityName.toLowerCase().split(' ').map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 }
+
+
 
 //we are going to create a code that will give weather info only when the user clicks the searchButton
 searchButton.addEventListener("click", event => {
@@ -42,12 +45,14 @@ searchButton.addEventListener("click", event => {
         console.log(fetchResult);
 })
 
+
 //here we defined a fxn called weatherInfo that is a data with weather information for the selected location; we will use this information to fill our weather articles in the HTML 
 const weatherInfo = (data, cityName) => {
     weatherBox.innerHTML = '';
 
     console.log(data);
 
+//this code is being blocked -idk why :(
     weatherBox.append(currentConditionImg[0])
 
 //creating a heading in font size 3 for our cityName with the value of the City 
@@ -151,7 +156,8 @@ const currWeatherImages = (data) => {
         currentCondition[1].innerHTML = data.current_condition[0].weatherDesc[0].value;
         locationHeading[0].innerHTML = location
     } 
-    currentCondition[0].prepend(currentConditionImg[1])
+    
+    currentCondition[0].prepend(buggyImg)
 }
 // here I am using the JSON information to access the weather conditions at 12:00pm (noon); this info is located in the hourly array#4 - the image will reflect the weather condition at noon
 const otherWeatherImages = (data) => {
@@ -208,4 +214,23 @@ const threeDayOverview = (data) => {
     console.log(conditions[1].innerHTML);
     console.log(conditions[0].innerHTML);
 }
+
+//temperature converter
+function convert() {
+	var degrees = document.getElementById("degrees").value;
+	if (document.getElementById("type").value == "fahrenheit") {
+		document.getElementById("result").innerHTML = `${(degrees - 32) / 1.8}°C<br>${
+			((degrees - 32) / 1.8 + 273.15).toFixed(2)
+		}°K`;
+	} else if (document.getElementById("type").value == "celsius") {
+		document.getElementById("result").innerHTML = `${degrees * 1.8 + 32}°F<br>${
+			(parseFloat(degrees) + 273.15)
+		}°K`;
+	} else if (document.getElementById("type").value == "kelvin") {
+		document.getElementById("result").innerHTML = `${
+			(degrees - 273.15) * 1.8 + 32
+		}°F<br>${((parseFloat(degrees).toFixed(2)) - 273.15)}}°C`;
+	}
+}
+
     
