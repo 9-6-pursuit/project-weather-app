@@ -1,0 +1,101 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Project</title>
+    <script src="WeatherScript.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style> 
+        body {
+          background-image: url("assets/weather background image.jpg");
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+    </style> 
+    </div>
+    <header>
+        <div class="page-container">
+            <div class="upper-box">
+                <h1>Weather App</h1>
+                 <form id="search-form" class="upper-box-item" action="">
+                     <label class="upper-box-item">Pick a location</label> 
+                     <input  id="search-term" class="upper-box-item" type="text" placeholder="Enter a city or area..." name="search-term"autofocus/>
+                     <button class="upper-box-item" id="search-button" type="submit">Get Weather Info</button>
+                 </form> 
+                 
+            </div>
+            <div class="lower-box">
+                <div class="weather-box">Choose a location to view weather.</div>
+                    <img class="img-duplicate" src="" alt="">
+                <section class="search-history">
+                    <h5 class="search-history">Previous Searches</h5>
+                        <li class="search-history-default"> No previous searches</li>
+                </section>
+            </div>
+        </div>
+    </header>
+    <aside class="converter">
+        <h4>Temperature Converter</h4>
+            <div id="converter">
+                <label for="degrees">Degrees</label>
+                     <input type="number" id="degrees">
+                <label for="type">Type</label>
+                <select id="type">
+                    <option value="fahrenheit">Fahrenheit</option>
+                    <option value="celsius">Celsius</option>
+                    <option value="kelvin">Kelvin</option>
+                </select>
+                <button id="convert" onclick="convert()">Convert</button>
+                <label id="resultlabel">Result:</label>
+                <h2 id="result"></h2>
+            </div>
+    </aside>
+    <main>
+        <article>
+            <H4 class="heading-date"></H4>
+                <ul class="current-conditions">
+                    <figure>
+                        <img class="img-duplicate curr-weather" src="assets/icon8-cloudy.svg" alt="sunny">
+                    </figure>
+                        
+                <div>
+                    <h2 class="current-temp"></h2>
+                    <p class="current-conditions"></p>
+                    <h3 class="location"></h3>
+                </div>
+               </ul>
+        </article>
+        <article>
+            <H4 class="heading-date"></H4>
+                <ul class="following-day">
+                       <figure>
+                            <img class="img" src="assets/icon8-sunny.svg" alt="sunny">
+                       </figure> 
+
+                       <div>
+                            <h2 class="following-temp"></h2>
+                            <p class="conditions"></p>
+                            <h3 class="location"></h3>
+                        </div>
+                </ul>
+        </article>
+        <article>
+            <H4 class="heading-date"></H4>
+                <ul class="following-day">
+                        <figure>
+                            <img class="img" src="assets/icons8-snow.svg" alt="snowy">
+                       </figure> 
+
+                       <div>
+                            <h2 class="following-temp"></h2>
+                            <p class="conditions"></p>
+                            <h3 class="location"></h3>
+                        </div>
+                </ul>
+            </article>
+    </main>
+</body>
+</html>
