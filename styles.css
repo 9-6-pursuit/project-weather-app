@@ -48,3 +48,19 @@ body {
 li {
     list-style: none;
 }
+
+.img {
+    size: 20%;
+}
+
+.curr-weather {
+    size: 20%;
+}
+
+main {
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+} 

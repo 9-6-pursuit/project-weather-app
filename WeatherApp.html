@@ -21,14 +21,15 @@
             </div>
             <div class="lower-box">
                 <div class="weather-box">Choose a location to view weather.</div>
+                        <img class="img-duplicate" src="assets/icon8-sunny.svg" alt="sunny">
                 <section class="search-history">
                     <h5 class="search-history">Previous Searches</h5>
-                        <li class="search-history-links"> No previous searches</li>
+                        <li class="search-history-default"> No previous searches</li>
                 </section>
             </div>
         </div>
     </header>
-    <aside>
+    <aside class="converter">
         <h4>Temperature Converter</h4>
             <div id="converter">
                 <label for="degrees">Degrees</label>
@@ -45,70 +46,48 @@
             </div>
     </aside>
     <main>
-        <article id="current-weather">
-            <H4>Current Weather</H4>
-                <ul>
+        <article>
+            <H4 class="heading-date"></H4>
+                <ul class="current-conditions">
                     <figure>
-                        <img src="assets/icons8-summer.gif" alt="sunny">
-                    </figure> 
+                        <img class="img-duplicate curr-weather" src="assets/icon8-cloudy.svg" alt="sunny">
+                    </figure>
+                        
                 <div>
-                    <h2>86 <sup>°</sup>F</h2>
-                    <p class="current-conditions">Sunny</p>
-                    <h3><span class="city-name">Newport News, Virginia</span></h3>
+                    <h2 class="current-temp"></h2>
+                    <p class="current-conditions"></p>
+                    <h3 class="location"></h3>
                 </div>
                </ul>
         </article>
-        <aside id="upcoming-weather">
-            <h4>Weather For The Next 3 Days</h4>
-            <article class="upcoming-weather">
-                <ul class="following-days">
+        <article>
+            <H4 class="heading-date"></H4>
+                <ul class="following-day">
                        <figure>
-                            <img src="assets/icons8-summer.gif" alt="sunny">
+                            <img class="img" src="assets/icon8-sunny.svg" alt="sunny">
                        </figure> 
 
                        <div>
-                            <h2>86 <sup>°</sup>F</h2>
-                            <p class="conditions">Sunny</p>
-                            <h3><span class="city-name">Newport News, Virginia</span></h3>
+                            <h2 class="following-temp"></h2>
+                            <p class="conditions"></p>
+                            <h3 class="location"></h3>
+                        </div>
+                </ul>
+        </article>
+        <article>
+            <H4 class="heading-date"></H4>
+                <ul class="following-day">
+                        <figure>
+                            <img class="img" src="assets/icons8-snow.svg" alt="snowy">
+                       </figure> 
+
+                       <div>
+                            <h2 class="following-temp"></h2>
+                            <p class="conditions"></p>
+                            <h3 class="location"></h3>
                         </div>
                 </ul>
             </article>
-            <article class="upcoming-weather">
-                <ul class="following-days">
-                        <figure>
-                            <img src="assets/icons8-summer.gif" alt="sunny">
-                       </figure> 
-
-                       <div>
-                            <h2>86 <sup>°</sup>F</h2>
-                            <p class="conditions">Sunny</p>
-                            <h3><span class="city-name">Newport News, Virginia</span></h3>
-                        </div>
-                </ul>
-            </article>
-            <article class="upcoming-weather">
-                <ul class="following-days">
-                        <figure>
-                            <img src="assets/icons8-summer.gif" alt="sunny">
-                       </figure> 
-
-                       <div>
-                            <h2>86 <sup>°</sup>F</h2>
-                            <p class="conditions">Sunny</p>
-                            <h3><span class="city-name">Newport News, Virginia</span></h3>
-                       </div>
-                </ul>
-            </article>
-        </aside>
     </main>
-    <!-- <aside id="weather-history">
-        <section></section>
-        <h5 class="search-history">Previous Searches</h5>
-    </aside>
-        <sidebar>
-            <ul class="search-history"></ul>
-            <a href=""></a>
-            <p>No searches have been made yet.</p>
-        </sidebar> -->
 </body>
 </html>
