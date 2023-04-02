@@ -13,6 +13,7 @@ const dayAfter = document.getElementsByClassName("day-after")[0];
 // console.log(getWeatherButton); //This is to check that the above are working.
 // console.log(previousSearches); //This is to check that the above are working.
 
+//will allow for content to appear when button is clicked on. 
 getWeatherButton.addEventListener("click", event => {
     // console.log("Button has been clicked on"); //This is to check that Event Listener is working.
     event.preventDefault();
@@ -20,6 +21,7 @@ getWeatherButton.addEventListener("click", event => {
     let cityName = cityNameInput.value;
     cityNameInput.value = '';
 
+//this is where the weather info will be originating from 
     let getWeatherData = fetch(`https://wttr.in/${cityName}?format=j1`); //fetches weather data from API.
     getWeatherData.then(response => {
         return response.json()
@@ -33,7 +35,7 @@ const fillWeatherBox = (weatherData, cityName) => {
     weatherBox.innerHTML = '';
 
     addToPrevious(weatherData, cityName)
-
+//adds current weather of location searched to the weatherBox
     let label = document.createElement('h3'); //creates a new element in HTML.
     label.textContent = cityName;
     weatherBox.append(label); //adds label to weather box.
@@ -86,6 +88,7 @@ const fillWeatherBox = (weatherData, cityName) => {
     snow.innerHTML = `<strong>Chance of Snow:</strong> ${chanceOfSnow}%`;
     weatherBox.append(snow);
 
+//adds image to HTML Doc
     let image = document.createElement("img");
     if (chanceOfSunshine > 50) {
         // image.setAttribute("'src", "./assets/icons8-summer.gif");
@@ -98,8 +101,9 @@ const fillWeatherBox = (weatherData, cityName) => {
         image.src = "./assets/icons8-light-snow.gif";
         image.setAttribute("alt", "snow");
     }
-    weatherBox.prepend(image);
+    weatherBox.prepend(image); // adds image to the beginning of thw weatherBox.
 
+    //Adds the weather for the next three days to the 3 day forcast section 
     today.innerHTML = '';
     tomorrow.innerHTML = '';
     dayAfter.innerHTML = '';
@@ -170,25 +174,31 @@ const fillWeatherBox = (weatherData, cityName) => {
     afterMin.innerHTML = `<strong>Min Temperature:</strong> ${dayAfterMin}° F`;
     dayAfter.append(afterMin);
 }
+
+//deleting the <p> tag in Previous searches if new searches get added to the section.
 let addToPrevious = (weatherData, cityName) => {
     let noPrevious = document.getElementById('no-searches');
     if (noPrevious) {
         noPrevious.remove();
     }
+
+//add the recently searched city to the previous searches section. 
 let previous = document.createElement('li');
 let name = document.createElement('a');
 name.textContent = cityName;
-name.href = "#";
+name.href = "#"; //turns text into a clickable hyperlink. 
 previous.append(name);
 previous.innerHTML += ` - ${weatherData.current_condition[0].temp_F}° F`;
 previousSearches.append(previous)
 }
 
+//This is going to make the temp converter function. 
 const tempConverter = document.getElementById("temp-converter");
 const convertedTemp = document.createElement("h4");
 convertedTemp.className = `converted-temp`;
 const convert = document.getElementById("convert");
 
+//will allow for the temp to convert to desired metric once button is clicked on. 
 tempConverter.addEventListener("submit", (event) => {
     event.preventDefault();
 
