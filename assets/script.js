@@ -23,7 +23,7 @@ button.addEventListener("click", (event)=> {
     .then((json) => {
        displayWeather(json, city)
         })
-      .catch(showError(Error));
+      .catch(err => console.error(err);
 })
 0
 const displayWeather = (weatherData,city) => {
