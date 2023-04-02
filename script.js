@@ -86,6 +86,20 @@ const fillWeatherBox = (weatherData, cityName) => {
     snow.innerHTML = `<strong>Chance of Snow:</strong> ${chanceOfSnow}%`;
     weatherBox.append(snow);
 
+    let image = document.createElement("img");
+    if (chanceOfSunshine > 50) {
+        // image.setAttribute("'src", "./assets/icons8-summer.gif");
+        image.src = "./assets/icons8-summer.gif"
+        image.setAttribute("alt", "sun");
+    } else if (chanceOfRain > 50) {
+        image.src = "./assets/icons8-torrential-rain.gif";
+        image.setAttribute("alt", "rain");
+    } else if (chanceOfSnow > 50) {
+        image.src = "./assets/icons8-light-snow.gif";
+        image.setAttribute("alt", "snow");
+    }
+    weatherBox.prepend(image);
+
     today.innerHTML = '';
     tomorrow.innerHTML = '';
     dayAfter.innerHTML = '';
@@ -192,3 +206,4 @@ tempConverter.addEventListener("submit", (event) => {
     }
     tempConverter.after(convertedTemp);
 })
+

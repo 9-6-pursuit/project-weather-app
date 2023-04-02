@@ -52,16 +52,16 @@ li {
 }
 
 .left {
-    border: 3px solid rgb(165, 244, 165);
+    /* border: 3px solid rgb(165, 244, 165); */
     display: flex;
     flex-direction: column;
     align-items: center; 
     /* justify-content: center; */
 }
 
-.center {
+/* .center {
     border: 3px solid yellow;
-}
+} */
 
 .weather-box {
     border: 2px solid rgb(103, 139, 145);
@@ -75,7 +75,6 @@ li {
 .three-days {
     border: 1px solid rgb(103, 139, 145);
     background: rgb(152, 150, 150, .75);
-    margin-top: 120px;
     display: grid;
     grid-template-columns: 33.333% 33.333% 33.333%;
     /* width: 500px;
@@ -115,7 +114,7 @@ li {
 }
 
 .right {
-    border: 3px solid skyblue;
+    /* border: 3px solid skyblue; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -163,8 +162,13 @@ li {
     margin: 8px;
 }
 
-button {
+#convert {
     margin: 8px;
+    border-radius: 5px;
+    border: 2px solid grey;
+    margin: 8px;
+    width: 100px;
+    height: 30px;
 }
 
 .converted-temp {
@@ -172,4 +176,16 @@ button {
     padding: 5px;
     background-color: white;
     
+}
+
+.three-day-title {
+    margin-top: 120px;
+    border: 2px solid rgb(103, 139, 145);
+    border-bottom: 0px solid rgb(103, 139, 145);
+    margin-left: -135px;
+    margin-right: -135px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(152, 150, 150, .75);
 }
