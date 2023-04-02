@@ -15,29 +15,49 @@
         <form>
             <ul class="weather-search-box">
                 <li class="search-area"">Pick a Location</li>
-                <input type="text" id="city-name-input" placeholder="enter a location" />
-                <button class="search-area" id="search-button">Get Weather</button>
+                <input type="text" class="city-name-input" id="city-name-input" placeholder="enter a location" />
+                <button class="search-button" id="search-button">Get Weather</button>
             </ul>
         </form>
     </header>
     <div class="mid-section">
         <!-- temperature conversion widget -->
         <aside class="left">
-            <p>converter</p>
+            <form id="temp-converter">
+                <label for="temp-to-convert">
+                    Temprature Converter
+                </label>
+                <input type="number" id="temp-to-convert" />
+                <input type="radio" id="to-c" name="convert-temp" value="c" />
+                <label for="to-c">
+                    To °C
+                </label>
+                <input type="radio" id="to-f" name="convert-temp" value="f" />
+                <label for="to-f">
+                    To °F
+                </label>
+                <button id="convert" type="submit">Convert</button>
+            </form>
         </aside>
         <main class="center">
             <!-- Contains current weather -->
             <article class="weather-box" id="weather-box">Choose a location to view the weather.</article>
             <!-- contains weather for today, tomorrow, and day after -->
-            <aside class="three-days">
-                <article class="today">Today</article>
-                <article class="tomorrow">Tomorrow</article>
-                <article class="day-after">Day After Tomorrow</article>
+            <aside class="three-days" id="three-days">
+                <article class="today">
+                    <h4>Today</h4>
+                </article>
+                <article class="tomorrow">
+                    <h4>Tomorrow</h4>
+                </article>
+                <article class="day-after">
+                    <h4>Day After Tmorrow</h4>
+                </article>
             </aside>
         </main>
         <!-- contains weather history -->
         <aside class="right">
-            <section>
+            <section class="previous">
                 <h4>Previous Searches</h4>
                 <p class="no-searches" id="no-searches">No previous searches.</p>
                 <ul class="previous-searches" id="previous-searches">
@@ -45,21 +65,6 @@
             </section>
         </aside>
     </div>
-    <!-- <div class="lower-box-outer">
-        <legend><strong>Temperature Converter</strong></legend>
-        <form>
-            <input type="text" class="text-box" required />
-            <div class="lower-box-inner">
-                <input type="radio" id="fahrenheit" name="scale" value="fahrenheit" />
-                <label for="fahrenheit">°F</label>
-            </div>
-            <div class="lower-box-inner">
-                <input type="radio" id="celsius" name="scale" value="celsius />
-                <label for="celsius"> °C</label>
-            </div>
-            <button>Submit</button>
-        </form>
-    </div> -->
     </div>
 </body>
 </html>
