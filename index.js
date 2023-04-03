@@ -16,30 +16,32 @@
 
 let form = document.querySelector(".search")
 const outputData = document.querySelector(".output")
-let cityInput = document.getElementById("current")
+let cityInput = document.getElementById("location-input")
+
+let button = document.querySelector(".button")
+
 
 // Fetch data
 function fetchWeatherData(cityName) {
+
     let receivedPromise = fetch(`https://wttr.in/${cityName}?format=j1`)
     receivedPromise.then(response => {
         return response.json()
     }).then(json => {
         fillWeatherBox(json, cityName)
+        console.log(json)
     }).catch(error => console.error(error))
-
-    
-
 
 }
 
 
 // Get city input
-form.addEventListener("submit", event => {
+button.addEventListener("click", event => {
     event.preventDefault()
     let cityName = ""
-    if(cityInput){
-      let cityName = cityInput.value
-    }
+   
+      cityName = cityInput.value
+    
     
     fetchWeatherData(cityName)
 })
