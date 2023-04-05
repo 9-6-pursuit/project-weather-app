@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="index.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Weather Application</title>
+  </head>
+  <body>
+    <header>
+      <h1>Weather App</h1>
+      <form>
+        <label>Pick a Location</label>
+        <input id="enter-location" type="text" value="" /><input
+          type="submit"
+        />
+      </form>
+    </header>
+    <aside id="temp-conversion"></aside>
+    <main>
+      <article id="current-weather">
+        <p>Choose a location to view the weather.</p>
+      </article>
+      <aside>
+        <article id="todays-weather"></article>
+        <article id="tomorrows-weather"></article>
+        <article id="day-after-weather"></article>
+      </aside>
+    </main>
+    <aside>
+      <section>
+        <h4>Previous Searches</h4>
+        <ul></ul>
+        <p>No previous searches</p>
+      </section>
+    </aside>
+  </body>
+</html>
