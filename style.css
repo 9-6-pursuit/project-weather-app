@@ -115,6 +115,8 @@ label {
 
 .previous-searches li {
     padding: 10px 0px;
+    
+    cursor: pointer;
 }
 
 button {
