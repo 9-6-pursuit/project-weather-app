@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Weather App</h1>
+        <form class="weather-form">
+            <label>Pick a Location</label>
+            <input type="text" placeholder="Type here...">
+            <button type="submit">Get Weather</button>
+        </form>
+    </header>
+    <main>
+        <div class="main-div">
+            <section class="main-section">
+                <h4 id="default-main-message">Choose a location to view the weather.</h4>
+                <div class="weather-body" style="display:none">
+                    <h1>Location Name</h1>
+                    <hr/>
+
+                    <div style="padding:5px;">
+                        <iframe src="https://giphy.com/embed/BCgbjF9Y41UgGEam5O" frameBorder="0" class="giphy-embed" allowFullScreen>
+                        </iframe>
+                        <p>
+                            <a id="giphy-link" href="https://giphy.com/stickers/encontrinhoblogdomath-BCgbjF9Y41UgGEam5O">
+                                via GIPHY
+                            </a>
+                        </p>
+                    </div>
+                    <hr/>
+                    <li>
+                        <b>Area: </b>
+                        <span>Area Name</span>
+                    </li>
+                    <li>
+                        <b>Region: </b>
+                        <span>Region Name</span>
+                    </li>
+                    <li>
+                        <b>Country: </b>
+                        <span>Country Name</span>
+                    </li>
+                    <li>
+                        <b>Currently: </b>
+                        <span>Feels like 0°F</span>
+                    </li>
+                    <li>
+                        <b>Chance of Sunshine: </b>
+                        <span>0%</span>
+                    </li>
+                    <li>
+                        <b>Chance of Rain: </b>
+                        <span>0%</span>
+                    </li>
+                    <li>
+                        <b>Chance of Snow: </b>
+                        <span>0%</span>
+                    </li>
+                </div>
+            </section>
+            
+            <div class="main-section forecast" style="display:none">
+                <section>
+                    <h1>Today</h1>
+                    <li>
+                        <b>Average Temperature: </b>
+                        <span>0°F</span>
+                    </li>
+                    <li>
+                        <b>Max Temperature: </b>
+                        <span>0°F</span>
+                    </li>
+                    <li>
+                        <b>Min Temperature: </b>
+                        <span>0°F</span>
+                    </li>
+                </section>
+
+                <section>
+                    <h1>Tomorrow</h1>
+                    <li>
+                        <b>Average Temperature: </b>
+                        <span>0°F</span>
+                    </li>
+                    <li>
+                        <b>Max Temperature: </b>
+                        <span>0°F</span>
+                    </li>
+                    <li>
+                        <b>Min Temperature: </b>
+                        <span>0°F</span>
+                    </li>
+                </section>
+
+                <section>
+                    <h1>After Tomorrow</h1>
+                    <li>
+                        <b>Average Temperature: </b>
+                        <span>0°F</span>
+                    </li>
+                    <li>
+                        <b>Max Temperature: </b>
+                        <span>0°F</span>
+                    </li>
+                    <li>
+                        <b>Min Temperature: </b>
+                        <span>0°F</span>
+                    </li>
+                </section>
+            </div>
+        </div>
+        <section class="previous-searches">
+            <label>Previous Searches</label>
+            <!-- document.getElementsByClassName('previous-searches')[0].querySelector('ul') -->
+            <ul>
+                <h4>No previous searches.</h4>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
