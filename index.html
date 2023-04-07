@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="page-container">
+    <!-- This is the header where the title and Area search are -->
+    <header>
+        <h1 class="title">Weather App</h1>
+        <form>
+            <ul class="weather-search-box">
+                <li class="search-area"">Pick a Location</li>
+                <input type="text" class="city-name-input" id="city-name-input" placeholder="enter a location" />
+                <button type="submit" class="search-button" id="search-button">Get Weather</button>
+            </ul>
+        </form>
+    </header>
+    <div class="mid-section">
+        <!-- temperature conversion widget -->
+        <aside class="left">
+            <form id="temp-converter">
+                <label for="temp-to-convert">
+                    Temprature Converter
+                </label>
+                <input type="number" id="temp-to-convert" />
+                <input type="radio" id="to-c" name="convert-temp" value="c" />
+                <label for="to-c">
+                    To °C
+                </label>
+                <input type="radio" id="to-f" name="convert-temp" value="f" />
+                <label for="to-f">
+                    To °F
+                </label>
+                <button id="convert" type="submit">Convert</button>
+            </form>
+        </aside>
+        <main class="center">
+            <!-- Contains current weather -->
+            <article class="weather-box" id="weather-box">Choose a location to view the weather.</article>
+            <!-- contains 3 day weather forcast -->
+            <aside class="three-day-title"><h3>Three Day Forcast</h3></aside>
+            <aside class="three-days" id="three-days">
+                <article class="today">
+                    <h4>Today</h4>
+                </article>
+                <article class="tomorrow">
+                    <h4>Tomorrow</h4>
+                </article>
+                <article class="day-after">
+                    <h4>Day After Tmorrow</h4>
+                </article>
+            </aside>
+        </main>
+        <!-- contains weather history -->
+        <aside class="right">
+            <section class="previous">
+                <h4>Previous Searches</h4>
+                <p class="no-searches" id="no-searches">No previous searches.</p>
+                <ul class="previous-searches" id="previous-searches">
+                </ul>
+            </section>
+        </aside>
+    </div>
+    </div>
+</body>
+</html>
