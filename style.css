@@ -1,3 +1,8 @@
+html {
+    width: 100vw;
+    height: 100vh;
+}
+
 body{
     align-items: center;
     display: flex;
@@ -188,4 +193,10 @@ li {
     flex-direction: column;
     align-items: center;
     background: rgb(152, 150, 150, .75);
+}
+
+@media screen and (max-width: 1000px) {
+    body {
+        background-position: 70%;
+    }
 }
