@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Weather App</title>
+</head>
+<body>
+    <div class="page-container">
+        <div class="upper-box">
+            <h1>Weather App</h1>
+            <ul class="upper-box-items">
+                <li class="upper-box-item">Pick a Location</li>
+                <input class="upper-box-item" id="city-input" type="text" placeholder="Enter a location here" required>
+                <button class="upper-box-item">Get Weather</button>
+            </ul>
+        </div>
+        <div class="lower-box">
+            <ul class="weather-box">
+                <p id="empty">Choose a location to view the weather.</p>
+                <div class="bottom">
+                    <ul class="day0"></ul>
+                    <ul class="day1"></ul>
+                    <ul class="day2"></ul>
+                </div>
+            </ul>
+            <ul class="search-list">
+                <h3 id="history-h3">Previous Searches:</h3>
+                <p class="sublist nolist">No previous searches.</p>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
