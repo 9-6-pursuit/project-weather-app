@@ -4,67 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
-    <link rel="stylesheet" href="style.css">
     <script defer src="index.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Weather App</title>
 </head>
 <body>
     <div class="page-container">
         <div class="upper-box">
-            
-            <h1>Weather App</h1>
+            <h1>Judy's Weather App</h1>
             <ul class="upper-box-items">
                 <li class="upper-box-item">Pick a Location</li>
-                <input type="text" class="upper-box-item" id="city-name-input">
-                <button class="upper-box-item" id="search-button">Get Weather</button>
+                <input class="upper-box-item" id="city-input" type="text" placeholder="Enter a location here" required>
+                <button class="upper-box-item">Get Weather</button>
             </ul>
         </div>
         <div class="lower-box">
-            <ul class="weather-box" id="weather-box">
-                <li><em>Choose a location to view the weather.</em></li>
+            <ul class="weather-box">
+                <p id="empty">Choose a location to view the weather.</p>
+                <div class="bottom">    
+                    <ul class="day0"></ul>
+                    <ul class="day1"></ul>
+                    <ul class="day2"></ul>
+                </div>
             </ul>
-            <ul class="previous-searches-list">
-                <h3>Previous Searches</h3>
-                <li class="no-searches"><em>No previous searches.</em></li>
+            <ul class="search-list">
+                <h4 id="history-h4">Previous Searches:</h4>
+                <p class="sublist nolist">No previous searches.</p>
             </ul>
         </div>
     </div>
 </body>
 </html>
-
-
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="index.js"></script>
-</head>
-<body>
-    <div class="page-container">
-        <div class="upper-box">
-            
-            <h1>Weather App</h1>
-            <ul class="upper-box-items">
-                <li class="upper-box-item">Pick a Location</li>
-                <input type="text" class="upper-box-item" id="city-name-input">
-                <button class="upper-box-item" id="search-button">Get Weather</button>
-            </ul>
-        </div>
-        <div class="lower-box">
-            <ul class="weather-box" id="weather-box">Choose a location to view the weather.</ul>
-            <ul class="previous-searches-list">
-                <h3>Previous Searches</h3>
-                <li class="noSearches"><em>No previous searches.</em></li>
-            </ul>
-        </div>
-    </div>
-</body>
-</html> -->
-
-
