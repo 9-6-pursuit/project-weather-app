@@ -22,7 +22,7 @@ input.addEventListener("keypress", event => {
     }
 })
 
-function showWeather(json) {
+function showWeather(data) {
     if (!clickCount) {
         document.getElementById("empty").remove();
         document.querySelector(".nolist").remove();
@@ -39,50 +39,55 @@ function showWeather(json) {
     
     let area = document.createElement("li");
     area.className = "weather-box-item";
-    area.innerHTML = `<strong>Area:</strong> ${json.nearest_area[0].areaName[0].value}`;
+    area.innerHTML = `<strong>Area:</strong> ${data.nearest_area[0].areaName[0].value}`;
 
     let region = document.createElement("li");
     region.className = "weather-box-item";
-    region.innerHTML = `<strong>Region:</strong> ${json.nearest_area[0].region[0].value}`;
+    if (!data.nearest_area[0].region[0].value) {
+        region.innerHTML = `<strong>Region:</strong> ${data.nearest_area[0].areaName[0].value}`;
+    }
+    else {
+        region.innerHTML = `<strong>Region:</strong> ${data.nearest_area[0].region[0].value}`;
+    }
 
     let country = document.createElement("li");
     country.className = "weather-box-item";
-    country.innerHTML = `<strong>Country:</strong> ${json.nearest_area[0].country[0].value}`;
+    country.innerHTML = `<strong>Country:</strong> ${data.nearest_area[0].country[0].value}`;
 
     let currently = document.createElement("li");
     currently.className = "weather-box-item";
-    currently.innerHTML = `<strong>Currently:</strong> ${json.current_condition[0].temp_F}°F`;
+    currently.innerHTML = `<strong>Currently:</strong> ${data.current_condition[0].temp_F}°F`;
 
     let feelsLike = document.createElement("li");
     feelsLike.className = "weather-box-item";
-    feelsLike.innerHTML = `<strong>Feels Like:</strong> ${json.current_condition[0].FeelsLikeF}°F`;
+    feelsLike.innerHTML = `<strong>Feels Like:</strong> ${data.current_condition[0].FeelsLikeF}°F`;
 
     let sunshine = document.createElement("li");
     sunshine.className = "weather-box-item";
-    sunshine.innerHTML = `<strong>Chance of Sunshine:</strong> ${json.weather[0].hourly[0].chanceofsunshine}`;
+    sunshine.innerHTML = `<strong>Chance of Sunshine:</strong> ${data.weather[0].hourly[0].chanceofsunshine}`;
 
     let rain = document.createElement("li");
     rain.className = "weather-box-item";
-    rain.innerHTML = `<strong>Chance of Rain:</strong> ${json.weather[0].hourly[0].chanceofrain}`;
+    rain.innerHTML = `<strong>Chance of Rain:</strong> ${data.weather[0].hourly[0].chanceofrain}`;
 
     let snow = document.createElement("li");
     snow.className = "weather-box-item";
-    snow.innerHTML = `<strong>Chance of Snow:</strong> ${json.weather[0].hourly[0].chanceofsnow}`;
+    snow.innerHTML = `<strong>Chance of Snow:</strong> ${data.weather[0].hourly[0].chanceofsnow}`;
     
     let weatherBox = document.querySelector(".weather-box");
     weatherBox.prepend(header, area, region, country, currently, feelsLike, sunshine, rain, snow);
 
     let img = document.createElement("img");
     img.className = "weather-box-item";
-    if (json.weather[0].hourly[0].chanceofsunshine > 50) {
+    if (data.weather[0].hourly[0].chanceofsunshine > 50) {
         img.src = "./assets/icons8-summer.gif";
         img.alt = "sun";
     }
-    else if (json.weather[0].hourly[0].chanceofrain > 50) {
+    else if (data.weather[0].hourly[0].chanceofrain > 50) {
         img.src = "./assets/icons8-torrential-rain.gif";
         img.alt = "rain";
     }
-    else if (json.weather[0].hourly[0].chanceofsnow > 50) {
+    else if (data.weather[0].hourly[0].chanceofsnow > 50) {
         img.src = "./assets/icons8-light-snow.gif";
         img.alt = "snow";
     }
@@ -97,13 +102,13 @@ function showWeather(json) {
         header.innerText = days[i];
         let avgTemp = document.createElement("li");
         avgTemp.className = "bottom-text";
-        avgTemp.innerHTML = `<strong>Average Temperature:</strong> ${json.weather[i].avgtempF}°F`;
+        avgTemp.innerHTML = `<strong>Average Temperature:</strong> ${data.weather[i].avgtempF}°F`;
         let maxTemp = document.createElement("li");
         maxTemp.className = "bottom-text";
-        maxTemp.innerHTML = `<strong>Max Temperature:</strong> ${json.weather[i].maxtempF}°F`;
+        maxTemp.innerHTML = `<strong>Max Temperature:</strong> ${data.weather[i].maxtempF}°F`;
         let minTemp = document.createElement("li");
         minTemp.className = "bottom-text";
-        minTemp.innerHTML = `<strong>Min Temperature:</strong> ${json.weather[i].mintempF}°F`;
+        minTemp.innerHTML = `<strong>Min Temperature:</strong> ${data.weather[i].mintempF}°F`;
         theDay.append(header, avgTemp, maxTemp, minTemp);
     }
 
@@ -114,7 +119,7 @@ function showWeather(json) {
         aTag.innerText = cityName;
         let li = document.createElement("li");
         li.className = "sublist";
-        li.append(aTag, ` (${json.current_condition[0].temp_F}°F)`);
+        li.append(aTag, ` (${data.current_condition[0].temp_F}°F)`);
         let listHeader = document.getElementById("history-h3");
         listHeader.parentNode.insertBefore(li, listHeader.nextSibling);
 
