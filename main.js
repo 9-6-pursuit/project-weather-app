@@ -36,7 +36,7 @@ searchButton.addEventListener("click", event => {
 
 const fillWeatherBox = (json, entered) => {
     weatherBox.innerHTML = ""
-     //window.sydney = json
+     window.sydney = json
 
     let newHead = document.createElement("h3")
     newHead.textContent = entered
@@ -76,6 +76,28 @@ const fillWeatherBox = (json, entered) => {
     newAddOn.innerHTML = `${entered} - ${currently}°F` 
     let sideAddition = document.getElementById("weather-box-item")
     sideAddition.append(newAddOn)
+
+//forcast- third box//
+    let days = ["Today", "Tomorrow", "Day After Tomorrow"];
+    for (let i = 0; i < 3; i++) {
+        let classDay = document.querySelector(`.day${i}`);
+        classDay.innerHTML = "";
+        let header = document.createElement("h3");
+        header.className = "third-box-text";
+        header.innerText = days[i];
+        let avgTemp = document.createElement("li");
+        avgTemp.className = "third-box-text";
+        avgTemp.innerHTML = `<strong>Avarage Temperature:</strong> ${json.weather[i].avgtempF}°F`;
+        let maxTemp = document.createElement("li");
+        maxTemp.className = "third-box-text";
+        maxTemp.innerHTML = `<strong>Max Temperature:</strong> ${json.weather[i].maxtempF}°F`;
+        let minTemp = document.createElement("li");
+        minTemp.className = "third-box-text";
+        minTemp.innerHTML = `<strong>Min Temperature:</strong> ${json.weather[i].mintempF}°F`;
+        classDay.append(header, avgTemp, maxTemp, minTemp);
+    }
+    
+    
 
 
     let celcius = json.current_condition[0].FeelsLikeC
