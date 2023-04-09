@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+    <title>Weather App</title>
+    <link rel="icon" type="images/x-icon" href="assets/favicon.ico" />
+</head>
+<body>
+    <div class="container">
+        <div class="first-box">
+            <header>
+                <h1>Weather App</h1>
+                <ul class="first-box-items">
+                    <li>Pick a location</li>
+                    <input type="text" id="entered-Input" />
+                  <button id="search-Button">Get Weather</button>
+                </ul>
+        
+            </header>
+        </div>
+        <div class="second-box">
+            <div class="weather-box" id="weather-box"> choose a location to view the weather.</div>
+            <ul id="weather-box-item">
+                <li > <strong>Previous Searches</strong> </li>
+                <li id="weather-box-addon" >No previous searches.</li> 
+            </ul>
+        </div>
+        <div class="third-box">
+            <ul class="day0"></ul>
+            <ul class="day1"></ul>
+            <ul class="day2"></ul>
+        </div>
+        <button id="last-Button">F°/C°</button>
+    </div>
+</body>
+</html>

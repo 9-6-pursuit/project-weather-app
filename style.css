@@ -1,0 +1,99 @@
+body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    width: 65%;  
+}
+
+.first-box {
+    background-color: teal;
+    border: 3px solid rgb(56, 67, 221);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+}
+h1 {
+    padding-left: 30%;
+    color: aliceblue;
+}
+.first-box-items {
+    display: flex;
+    flex-direction: row;
+    padding-right: 50px;
+    color: aliceblue;
+}
+.first-box-items li {
+    margin-right: 10px;
+}
+button {
+    cursor: pointer;
+    background-color: turquoise;
+    color: aliceblue;
+    margin-left: 10px;
+}
+
+.second-box {
+    border: 3px solid rgb(75, 186, 234);
+    display:grid;
+    grid-template-columns: 70% 30%;
+    margin-top: 20px;
+    border-radius: 15px;
+}
+
+.weather-box {
+    align-items: center;
+    display: flex;  
+    flex-direction: column;
+    justify-content: center;
+    padding: 16px;
+}
+
+.newAddedLines {
+    padding-bottom: 10px;
+}
+
+.fontSize {
+    font-weight: lighter;
+    color: blue;
+    list-style:disc;
+    padding-left: 10px;
+}
+
+#weather-box-item {
+    padding-right: 20px;
+}
+
+.third-box {
+    border: 3px solid rgb(75, 186, 234);
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin-top: 15px;
+}
+.third-box ul {
+    justify-items: center;
+}
+
+
+#last-Button {
+    border-radius: 16px;
+    margin-top: 10px;
+}
+
+#tog {
+    display: block;
+}
+
+#tog1 {
+    display: none;
+}
