@@ -19,6 +19,7 @@ li{
     align-items: center;
     flex-direction: column;
     list-style: none;
+    font-weight: bold;
 }
 
 .page-container {
@@ -51,6 +52,7 @@ li{
     border: 1px solid black;
     padding: 40px 60px 30px 40px; 
     margin: 0px 227px 0px 0px;
+    background-color: grey;
 }
 
 .previous-search-box {
