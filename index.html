@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+</head>
+<body>
+    <div class ="page-container">
+        <div class ="upper-box">
+            <h1>Weather App</h1>
+            <div class = "upper-box-items">
+                <h4>Pick a Location</h4>
+                <input type="text" id="upper-text-items" placeholder="Type here...">
+                <button id="submit-button">Get Weather</button>
+                <br>
+            </div>
+        </div>
+        <div class = "lower-box">
+            <div class="weather-box">Choose a location to view the weather
+                <ul id = "weather-box-list">
+                    <li type="hidden" >Area</li>
+                    <br>
+                    <li>Region</li>
+                    <br>
+                    <li>Country</li>
+                    <br>
+                    <li>Currently Feels Like</li>
+                </ul>
+            </div>
+            <ul id = "previous-search-box">
+                <h3>Previous Searches</h3>
+            </ul>
+        </div>
+        <div class= "days-box">
+            <div class = "Today">
+                <ul id = "Today-List">
+                    <li>Average Temperature</li>
+                    <br>
+                    <li>Max Temperature</li>
+                    <br>
+                    <li>Min Temperature</li>
+                </ul>
+            </div>
+            <div class = "Tomorrow">
+                <ul id = "Tomorrow-List">
+                    <li>Average Temperature</li>
+                    <br>
+                    <li>Max Temperature</li>
+                    <br>
+                    <li>Min Temperature</li>
+                </ul>
+            </div>
+            <div class ="Day-After-Tomorrow">
+                <ul id = "Day-After-Tomorrow-List">
+                    <li>Average Temperature</li>
+                    <br>
+                    <li>Max Temperature</li>
+                    <br>
+                    <li>Min Temperature</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
