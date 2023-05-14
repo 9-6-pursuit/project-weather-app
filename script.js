@@ -48,18 +48,106 @@
 // //     h3.textContent = `${"Today"}`
 // // }
 
-const submitButton = document.querySelector("button");
+// const submitButton = document.querySelector("button");
+// let input = document.getElementById("city-input");
+// let clickCount = 0;
+// submitButton.addEventListener("click", (event) => {
+//     event.preventDefault();
+//     if (input.value) {
+//         let locationName = input.value.replaceAll(" ", "+");
+    
+//         fetch(`https://wttr.in/${locationName}?format=j1`)
+//         .then(response => response.json())
+//         .then(json => displayWeather(json))
+//         .catch(displayError);
+//     }
+// })
+
+// input.addEventListener("keypress", event => {
+//     if (event.key === "Enter") {
+//         event.preventDefault();
+//         searchButton.click();
+//     }
+// })
+
+// function displayWeather(result) {
+//     let weatherForecast = document.querySelector(".weather-forecast");
+//     let searchList = document.querySelector(".search-bar");
+//     let history = `${result.nearest_area[0].areaName[0].value} (${result.current_condition[0].FeelsLikeF}°F)`
+
+//     if (!clickCount) {
+//         document.getElementById("empty").remove();
+//         document.querySelector(".nolist").remove();
+//         searchList.innerHTML += `<li class="secondList">${history}</li>`;
+//         clickCount ++;
+//     }
+//     else {
+//         let boxItems = document.querySelectorAll(".weather-forecast");
+//         boxItems.forEach(item => item.remove());
+//     }
+//     if (!searchList.innerHTML.includes(history)) {
+//         let listHeader = document.getElementById("history-h3");
+//         listHeader.insertAdjacentHTML("afterend", `<li class="secondList">${history}</li>`);
+//     }
+    
+//     let header = document.createElement("h2");
+//     header.className = "weather-forecast";
+//     header.textContent = input.value;
+//     input.value = "";
+    
+//     let area = document.createElement("li");
+//     area.className = "weather-forecast";
+//     area.innerHTML = `<strong>Area:</strong> ${result.nearest_area[0].areaName[0].value}`;
+//     let region = document.createElement("li");
+//     region.className = "weather-forecast";
+//     region.innerHTML = `<strong>Region:</strong> ${result.nearest_area[0].region[0].value}`;
+//     let country = document.createElement("li");
+//     country.className = "weather-forecast";
+//     country.innerHTML = `<strong>Country:</strong> ${result.nearest_area[0].country[0].value}`;
+//     let currently = document.createElement("li");
+//     currently.className = "weather-forecast";
+//     currently.innerHTML = `<strong>Currently:</strong> Feels like ${result.current_condition[0].FeelsLikeF}°F`;
+
+//     weatherForecast.prepend(header, area, region, country, currently);
+
+//     let days = ["Today", "Tomorrow", "Day After Tomorrow"];
+//     for (let i = 0; i < 3; i++) {
+//         let theDay = document.querySelector(`.day${i}`);
+//         theDay.innerHTML = "";
+//         let header = document.createElement("h3")
+//         header.className = "lower-header";
+//         header.innerText = days[i];
+//         let avgTemp = document.createElement("li");
+//         avgTemp.className = "lower-text";
+//         avgTemp.innerHTML = `<strong>Avarage Temperature:</strong> ${result.weather[i].avgtempF}°F`;
+//         let maxTemp = document.createElement("li");
+//         maxTemp.className = "lower-text";
+//         maxTemp.innerHTML = `<strong>Max Temperature:</strong> ${result.weather[i].maxtempF}°F`;
+//         let minTemp = document.createElement("li");
+//         minTemp.className = "lower-text";
+//         minTemp.innerHTML = `<strong>Min Temperature:</strong> ${result.weather[i].mintempF}°F`;
+//         theDay.append(header, avgTemp, maxTemp, minTemp);
+//     }
+
+//     document.querySelector(".lower").style["background-color"] = "#bbbbbb";
+// }
+
+// function displayError(error) {
+//     console.log(error);
+// }
+
+const searchButton = document.querySelector("button");
 let input = document.getElementById("city-input");
 let clickCount = 0;
-submitButton.addEventListener("click", (event) => {
+searchButton.addEventListener("click", (event) => {
     event.preventDefault();
     if (input.value) {
-        let locationName = input.value.replaceAll(" ", "+");
+        let cityName = input.value.replaceAll(" ", "+");
     
-        fetch(`https://wttr.in/${locationName}?format=j1`)
+        fetch(`https://wttr.in/${cityName}?format=j1`)
         .then(response => response.json())
-        .then(json => displayWeather(json))
-        .catch(displayError);
+        .then(json => showWeather(json))
+        .catch(showError);
     }
 })
 
@@ -70,10 +158,10 @@ input.addEventListener("keypress", event => {
     }
 })
 
-function displayWeather(result) {
-    let weatherForecast = document.querySelector(".weather-box");
+function showWeather(json) {
+    let weatherBox = document.querySelector(".weather-box");
     let searchList = document.querySelector(".search-list");
-    let history = `${result.nearest_area[0].areaName[0].value} (${result.current_condition[0].FeelsLikeF}°F)`
+    let history = `${json.nearest_area[0].areaName[0].value} (${json.current_condition[0].FeelsLikeF}°F)`
 
     if (!clickCount) {
         document.getElementById("empty").remove();
@@ -85,11 +173,12 @@ function displayWeather(result) {
         let boxItems = document.querySelectorAll(".weather-box-item");
         boxItems.forEach(item => item.remove());
     }
+
     if (!searchList.innerHTML.includes(history)) {
         let listHeader = document.getElementById("history-h3");
         listHeader.insertAdjacentHTML("afterend", `<li class="sublist">${history}</li>`);
     }
-    
+
     let header = document.createElement("h2");
     header.className = "weather-box-item";
     header.textContent = input.value;
@@ -97,41 +186,42 @@ function displayWeather(result) {
     
     let area = document.createElement("li");
     area.className = "weather-box-item";
-    area.innerHTML = `<strong>Area:</strong> ${result.nearest_area[0].areaName[0].value}`;
+    area.innerHTML = `<strong>Area:</strong> ${json.nearest_area[0].areaName[0].value}`;
     let region = document.createElement("li");
     region.className = "weather-box-item";
-    region.innerHTML = `<strong>Region:</strong> ${result.nearest_area[0].region[0].value}`;
+    region.innerHTML = `<strong>Region:</strong> ${json.nearest_area[0].region[0].value}`;
     let country = document.createElement("li");
     country.className = "weather-box-item";
-    country.innerHTML = `<strong>Country:</strong> ${result.nearest_area[0].country[0].value}`;
+    country.innerHTML = `<strong>Country:</strong> ${json.nearest_area[0].country[0].value}`;
     let currently = document.createElement("li");
     currently.className = "weather-box-item";
-    currently.innerHTML = `<strong>Currently:</strong> Feels like ${result.current_condition[0].FeelsLikeF}°F`;
+    currently.innerHTML = `<strong>Currently:</strong> Feels like ${json.current_condition[0].FeelsLikeF}°F`;
 
-    weatherForecast.prepend(header, area, region, country, currently);
+    weatherBox.prepend(header, area, region, country, currently);
 
-    let days = ["Today", "Tomorrow", "Day After Tomorrow"];
+
+let days = ["Today", "Tomorrow", "Day After Tomorrow"];
     for (let i = 0; i < 3; i++) {
         let theDay = document.querySelector(`.day${i}`);
         theDay.innerHTML = "";
-        let header = document.createElement("h3")
+        let header = document.createElement("h3");
         header.className = "bottom-header";
         header.innerText = days[i];
         let avgTemp = document.createElement("li");
-        avgTemp.className = "lower-text";
-        avgTemp.innerHTML = `<strong>Avarage Temperature:</strong> ${result.weather[i].avgtempF}°F`;
+        avgTemp.className = "bottom-text";
+        avgTemp.innerHTML = `<strong>Avarage Temperature:</strong> ${json.weather[i].avgtempF}°F`;
         let maxTemp = document.createElement("li");
-        maxTemp.className = "lower-text";
-        maxTemp.innerHTML = `<strong>Max Temperature:</strong> ${result.weather[i].maxtempF}°F`;
+        maxTemp.className = "bottom-text";
+        maxTemp.innerHTML = `<strong>Max Temperature:</strong> ${json.weather[i].maxtempF}°F`;
         let minTemp = document.createElement("li");
-        minTemp.className = "lower-text";
-        minTemp.innerHTML = `<strong>Min Temperature:</strong> ${result.weather[i].mintempF}°F`;
+        minTemp.className = "bottom-text";
+        minTemp.innerHTML = `<strong>Min Temperature:</strong> ${json.weather[i].mintempF}°F`;
         theDay.append(header, avgTemp, maxTemp, minTemp);
     }
 
-    document.querySelector(".lower").style["background-color"] = "#bbbbbb";
+    document.querySelector(".bottom").style["background-color"] = "#bbbbbb";
 }
 
-function displayError(error) {
+function showError(error) {
     console.log(error);
 }
