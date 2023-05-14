@@ -1,0 +1,158 @@
+/* header {
+    text-align: center;
+    color: white;
+    border: 3px solid black;
+    padding: 30px;
+    margin: auto;
+    width:900px;
+    background-color:rgba(3, 143, 143, 0.891) ;
+    }
+
+div {
+    text-align: center;
+    color:black;
+    border: 3px solid teal;
+    padding: 30px;
+    margin: auto;
+    height: fit-content;
+    width:500px;
+    background-color: silver;
+} */
+
+/* html,
+body {
+  color: #0f0e0e;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 15px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: sans-serif;
+  font-weight: normal;
+  margin: 0;
+}
+
+header {
+  background: green;
+  border: 2px solid black;
+  color:black;
+  list-style: none;
+}
+
+header h1 {
+    display: flex;
+    flex-direction: row;
+    padding: 25px;
+    font-family: "EB Garamond", serif;
+    font-size: 50px;
+    margin-left: 300px;
+    list-style: none;
+}
+
+.centered {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 25px auto;
+  width: 75%;
+}
+
+button {
+  border: 2px solid #c5cec9;
+  border-radius: 5px;
+  background: #e0e8e3;
+  color: #0a0a0a;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px;
+}
+
+button:hover {
+  border: 2px solid #b7bdb9;
+  background: #858987;
+} */
+
+li {
+    list-style: none;
+}
+p {
+    font-style: inherit;
+}
+.page-container {
+    padding: 20px;
+    width: 75%;
+}
+.upper-box {
+    border: 4px solid black;
+    background-color: teal;
+    color: white;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.upper-box-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.upper-box-item {
+    margin: 6px;
+}
+.lower-box {
+    padding: 40px 7px 0px 5px;
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+.weather-forecast {
+    background-color: #dedede;
+    border: 2px solid teal;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+.search-bar {
+    background-color: #dedede;
+    margin-left: 7px;
+}
+
+.secondList {
+    padding-left: 10px;
+    margin-top: 10px;
+}
+.weather-forecast {
+    margin-bottom: 15px;
+}
+
+.lower {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px 10px 0px;
+}
+.lower ul {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.lower-header {
+    font-size: 20px;
+}
+
+.lower-text {
+    font-size: 15px;
+    padding: 10px;
+}
